@@ -12,9 +12,10 @@
 .section3{
 }
 img {
-  max-width: 100%;
   background: center;
-  height: 40vw;
-  width: 40vw;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 </style>

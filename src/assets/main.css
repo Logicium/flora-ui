@@ -1,8 +1,9 @@
 @import 'base.css';
 
 body{
-  margin: 8vw;
+  margin: 0;
   background-color: whitesmoke;
+
 }
 #app {
   margin: 0 auto;
