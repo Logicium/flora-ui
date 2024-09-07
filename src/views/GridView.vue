@@ -1,61 +1,69 @@
 <script setup lang="ts">
 
 import NumberCard from "../components/NumberCard.vue";
+import ImageCard from "../components/ImageCard.vue";
+import InfoCard from "@/components/InfoCard.vue";
+import Footer from "@/components/Footer.vue";
+import Section1 from "../views/Section1.vue";
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="box image big"></div>
-    <div class="box"><NumberCard number="01" title='f l o w e r s'></NumberCard></div>
-    <div class="box image big2"></div>
-    <div class="box image"></div>
-    <div class="box image"></div>
-    <div class="box image"></div>
-    <div class="box image"></div>
-    <div class="box"><NumberCard number="02" title='s e e d s'></NumberCard></div>
-    <div class="box image"></div>
-    <div class="box image"></div>
-  </div>
 
+  <div class="wrapper">
+    <Section1 class="banner"></Section1>
+    <ImageCard class="box big" image="/src/assets/flower5.jpg" title="SAGE" price="$6"></ImageCard>
+    <div class="box"><NumberCard number="01" title='FLOWER CARDS'></NumberCard></div>
+    <ImageCard class="box big2" image="/src/assets/flower7.jpg" title="LAVENDER" price="$3"></ImageCard>
+    <ImageCard class="box" image="/src/assets/flower4.jpg" title="LAVENDER" price="$6"></ImageCard>
+    <ImageCard class="box" image="/src/assets/flower5.jpg" title="DESERT ROSE" price="$6"></ImageCard>
+    <ImageCard class="box" image="/src/assets/flower6.jpg" title="BORAGE" price="$6"></ImageCard>
+    <ImageCard class="box" image="/src/assets/flower7.jpg" title="JADEA" price="$3"></ImageCard>
+    <div class="box"><NumberCard number="02" title='FLOWER SEEDS'></NumberCard></div>
+    <ImageCard class="box" image="/src/assets/flower4.jpg" title="HONEYSTALK" price="$3"></ImageCard>
+    <ImageCard class="box" image="/src/assets/flower6.jpg" title="WILDFLOWER" price="$3"></ImageCard>
+    <InfoCard class="box" title="LOCATION" info="PO.256, Trinidad, CO, USA"></InfoCard>
+    <InfoCard class="box" title="EMAIL" info="sales@florashop.com"></InfoCard>
+    <InfoCard class="box" title="PHONE" info="+1 720.000.0271"></InfoCard>
+    <InfoCard class="box" title="SOCIAL"></InfoCard>
+    <InfoCard class="box big3" title="CONTACT US"></InfoCard>
+    <Footer></Footer>
+  </div>
 </template>
 
 <style scoped>
 
 .wrapper{
-  width: 100%;
+  width: 80vw;
   display: grid;
-  grid-template-columns: repeat(4,20vw);
-  grid-template-rows: 20vw;
+  grid-template-columns: repeat(4,16vw);
+  grid-template-rows: 16vw;
   column-gap: 4vw;
   row-gap: 4vw;
 }
 
+.banner{
+  grid-row: 1 / 3;
+  grid-column: 1 / 5;
+}
 
 .big{
-  grid-row-start: 1;
-  grid-row-end:3;
-  grid-column-start: 3;
-  grid-column-end: 5;
+  grid-row: 3 / 5;
+  grid-column: 3 / 5;
 }
 
 .big2{
-  grid-row-start: 3;
-  grid-row-end:5;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-row: 5 / 7;
+  grid-column: 1 / 3;
+}
+
+.big3{
+  grid-row: 7 / 9;
+  grid-column: 3 / 5;
 }
 
 .box{
   aspect-ratio: 1/1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image{
-  background-image: url("../assets/flower5.jpg");
-  background-position: 100% 100%;
-  background-size: cover;
 }
 
 </style>

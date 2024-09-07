@@ -1,22 +1,29 @@
 <script setup lang="ts">
 
-import SearchIcon from "@/components/icons/SearchIcon.vue";
-import ShopIcon from "@/components/icons/ShopIcon.vue";
-import MenuIcon from "@/components/icons/MenuIcon.vue";
-import UserIcon from "@/components/icons/UserIcon.vue";
+import SearchIcon from "../components/icons/SearchIcon.vue";
+import ShopIcon from "../components/icons/ShopIcon.vue";
+import UserIcon from "../components/icons/UserIcon.vue";
+import router from "../router";
+
+const route = function (route:string){
+  router.push(route);
+}
+
 </script>
 
 <template>
   <div class="navWrapper">
     <div class="navbar row">
-      <div class="title">F L O R A</div>
+      <div class="title">
+        <div class="text" @click="route('/')">F L O R A</div>
+      </div>
       <div class="content">
-        <div>B L O G</div>
-        <div>A B O U T</div>
-        <div>C O N T A C T</div>
-        <div><SearchIcon></SearchIcon></div>
-        <div><ShopIcon></ShopIcon></div>
-        <div><UserIcon></UserIcon></div>
+        <div class="text" @click="route('/blog')">B L O G</div>
+        <div class="text" @click="route('/about')">A B O U T</div>
+        <div class="text" @click="route('/contact')">C O N T A C T</div>
+        <div class="icon"><SearchIcon></SearchIcon></div>
+        <div class="icon"><ShopIcon></ShopIcon></div>
+        <div class="icon"><UserIcon></UserIcon></div>
       </div>
     </div>
   </div>
@@ -26,13 +33,24 @@ import UserIcon from "@/components/icons/UserIcon.vue";
 
 .navWrapper{
   position: fixed;
-  top:0px;
-  left:0px;
+  top:0;
+  left:0;
   width: 100%;
+  background-color: white;
+}
+
+.text{
+  align-self: center;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .title{
   width: 50%;
+}
+
+.icon{
+  cursor: pointer;
 }
 
 .content{
@@ -42,12 +60,11 @@ import UserIcon from "@/components/icons/UserIcon.vue";
 }
 
 .navbar{
-  background-color: whitesmoke;
   display: flex;
   align-items: center;
-  width: 92vw;
+  width: 76vw;
   height:6vw;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   margin: 0 auto;
 }
 

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Flora from '../Flora.vue'
+import GridView from "../views/GridView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,15 +8,28 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Flora
+      component: GridView
     },
     {
       path: '/contact',
       name: 'contact',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/ContactView.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: () => import('../views/BlogView.vue')
+    },
+    {
+      path: '/product/:id',
+      name: 'product',
+      props: true,
+      component: () => import('../views/ProductView.vue')
     }
   ]
 })

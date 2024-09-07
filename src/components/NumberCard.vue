@@ -5,6 +5,7 @@ defineProps(['number','title'])
 <template>
   <div class="numberCard">
     <div class="number">{{number}}</div>
+    <div class="line"></div>
     <div class="title">{{title}}</div>
   </div>
 </template>
@@ -18,14 +19,23 @@ defineProps(['number','title'])
     display: flex;
     flex-direction: column;
   }
+  .line{
+    background-color: black;
+    height: 4px;
+    width: 3vw;
+    margin-left: 1vw;
+    margin-top: auto;
+  }
   .number{
     width: 100%;
     text-align: right;
-    font-size: 8vw;
+    font-size: 5vw;
   }
   .title {
-    font-size: 2vw;
+    font-size: 1.3vw;
     text-align: left;
-    margin-top: auto;
+    margin-left: 1vw;
+    margin-top:1vw;
+    margin-bottom: 1vw;
   }
 </style>
