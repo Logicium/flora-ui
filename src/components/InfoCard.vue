@@ -18,9 +18,8 @@ defineProps(['title','info'])
   background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
-  align-items: normal;
-  height: 100%;
   font-weight: 500;
+  width: 100%;
 }
 
 .line{
@@ -32,16 +31,19 @@ defineProps(['title','info'])
 }
 
 .title {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   text-align: left;
   margin-left: 1.5vw;
+  margin-right: 1.5vw;
   margin-top: 0.8vw;
 }
 
 .info{
+  max-height:100%;
+  font-size: 1vw;
   margin-top: auto;
-  font-size: 1.1vw;
   margin-left: 1.5vw;
+  margin-right: 1.5vw;
   margin-bottom: 1.5vw;
 }
 

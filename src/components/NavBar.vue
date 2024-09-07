@@ -64,7 +64,7 @@ const route = function (route:string){
   align-items: center;
   width: 76vw;
   height:6vw;
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   margin: 0 auto;
   font-weight: 500;
 }

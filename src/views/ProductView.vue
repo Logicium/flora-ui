@@ -5,6 +5,7 @@ import InfoCard from "@/components/InfoCard.vue";
 import ImageCard from "@/components/ImageCard.vue";
 import NumberCard from "@/components/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
+import SocialCard from "@/components/SocialCard.vue";
 
 const props = defineProps({
   image:  { type: String, default: '/src/assets/flower7.jpg'},
@@ -18,11 +19,11 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
 <template>
   <div class="productWrap">
     <div class="nameWrap"><ImageCard :image=image :title=title /></div>
-    <div class="priceWrap"> <InfoCard/> </div>
+    <div class="priceWrap"><InfoCard/></div>
     <NumberCard class="box" number="01" title="RELATED"/>
-    <InfoCard class="box" />
-    <InfoCard class="box" />
-    <InfoCard class="box" title="SHARE"/>
+    <InfoCard class="box"/>
+    <InfoCard class="box"/>
+    <SocialCard class="box" title="SHARE"/>
     <Footer/>
   </div>
 </template>
@@ -43,8 +44,6 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
   grid-row: 1/3;
   grid-column: 1/5;
   display: flex;
-  background-position: 100% 100%;
-  background-size: cover;
 }
 
 .priceWrap{

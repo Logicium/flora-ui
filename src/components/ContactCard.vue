@@ -41,12 +41,12 @@
 input{
   margin-left: 1.5vw;
   margin-right: 1.5vw;
+  margin-bottom: 1.5vw;
   font-family: "Barlow",sans-serif;
   background-color: #f1f1f1;
   border: none;
   border-bottom: black solid 2px;
   flex: 1;
-  margin-bottom: 1vw;
 }
 
 .line{
@@ -61,19 +61,19 @@ input{
   background-color: black;
   color: #f1f1f1;
   text-align: center;
-  width: 14vw;
+  width: 13vw;
   height: 3vw;
   margin-top: auto;
   margin-left: 1.5vw;
   margin-bottom: 1.5vw;
   cursor: pointer;
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   align-content: center;
   font-weight: 500;
 }
 
 .title {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   text-align: left;
   margin-left: 1.5vw;
   margin-top: 0.8vw;

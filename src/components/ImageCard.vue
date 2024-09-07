@@ -39,7 +39,7 @@
 }
 
 .title {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   margin-left: 1.5vw;
   text-align: left;
   margin-top: 0.8vw;

@@ -12,7 +12,7 @@ const route = function (route:string){
   <div class="footer">
     <div class="title">©flora 2024. made by kisora thomas</div>
     <div class="content">
-      <div class="text">blog</div>
+      <div class="text" @click="route('/blog')">blog</div>
       <div class="text">faqs</div>
       <div class="text">orders</div>
       <div class="text" @click="route('/contact')">contact</div>
@@ -42,6 +42,6 @@ const route = function (route:string){
   width: 76vw;
   height:6vw;
   display: flex;
-  font-size: 1.3vw;
+  font-size: 1.2vw;
 }
 </style>

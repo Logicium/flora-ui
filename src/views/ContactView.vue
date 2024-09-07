@@ -5,6 +5,7 @@ import InfoCard from "@/components/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
 import ContactCard from "@/components/ContactCard.vue";
 import BannerCard from "@/components/BannerCard.vue";
+import SocialCard from "@/components/SocialCard.vue";
 </script>
 
 <template>
@@ -18,7 +19,7 @@ import BannerCard from "@/components/BannerCard.vue";
   <InfoCard class="box" title="LOCATION" info="PO.256, Trinidad, CO, USA"></InfoCard>
   <InfoCard class="box" title="EMAIL" info="sales@florashop.com"></InfoCard>
   <InfoCard class="box" title="PHONE" info="+1 720.000.0271"></InfoCard>
-  <InfoCard class="box" title="SOCIAL"></InfoCard>
+  <SocialCard class="box" title="SOCIAL"></SocialCard>
   <Footer/>
 </div>
 </template>

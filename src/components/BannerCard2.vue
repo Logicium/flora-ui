@@ -21,7 +21,8 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
   font-size: 4vw;
   margin-left: 1.4vw;
   text-align: left;
-  margin-top: 1.4vw;
+  margin-top: auto;
+  margin-bottom: 1.4vw;
 }
 
 .image {
@@ -33,6 +34,7 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
   align-items: normal;
   width:100%;
   height: 100%;
+  cursor: pointer;
   font-weight: 300;
 }
 

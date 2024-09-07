@@ -6,12 +6,13 @@ import InfoCard from "@/components/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
 import Section1 from "../components/Section1.vue";
 import ContactCard from "@/components/ContactCard.vue";
+import SocialCard from "@/components/SocialCard.vue";
 </script>
 
 <template>
 
   <div class="wrapper">
-    <Section1 class="banner"></Section1>
+    <div class="banner"><Section1></Section1></div>
     <ImageCard class="box big" image="/src/assets/flower5.jpg" title="SAGE" price="$6"></ImageCard>
     <div class="box"><NumberCard number="01" title='FLOWER CARDS'></NumberCard></div>
     <ImageCard class="box big2" image="/src/assets/flower7.jpg" title="LAVENDER" price="$3"></ImageCard>
@@ -25,9 +26,8 @@ import ContactCard from "@/components/ContactCard.vue";
     <InfoCard class="box" title="LOCATION" info="PO.256, Trinidad, CO, USA"></InfoCard>
     <InfoCard class="box" title="EMAIL" info="sales@florashop.com"></InfoCard>
     <InfoCard class="box" title="PHONE" info="+1 720.000.0271"></InfoCard>
-    <InfoCard class="box" title="SOCIAL"></InfoCard>
+    <SocialCard class="box" title="SOCIAL"/>
     <ContactCard class="box big3"/>
-<!--    <InfoCard class="box big3" title="CONTACT US"></InfoCard>-->
     <Footer></Footer>
   </div>
 </template>

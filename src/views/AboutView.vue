@@ -10,15 +10,19 @@ import BannerCard from "@/components/BannerCard.vue";
 <template>
   <div class="aboutWrap">
     <div class="titleWrap">
-      <InfoCard title="Flora is a company based out of Trinidad, CO."/>
+      <InfoCard class="box" title="HANDMADE CARDS WITH A STORY" info="Nestled in the heart of Trinidad, Colorado, our small business is dedicated to crafting unique and heartfelt handmade cards featuring pressed flowers grown right here in our community. Every bloom is lovingly pressed, preserving its delicate colors and textures for eternity.
+
+      Each pressed flower tells a unique story, adding a special meaning to every card. A vibrant rose may symbolize love and passion, while a delicate daisy can represent innocence and purity. The symbolism of each flower is carefully considered to enhance the message you wish to convey.
+
+      Whether you're sending a birthday greeting, expressing gratitude, or sharing a token of affection, our handmade creations offer a touch of natural elegance and warmth. We invite you to explore our collection and discover the perfect card to convey your message."/>
     </div>
     <div class="imageWrap">
       <BannerCard title="ABOUT" image="/src/assets/flower5.jpg"/>
     </div>
-    <NumberCard class="box" number="01" title="HANDMADE"/>
-    <InfoCard class="box" title="About text"/>
-    <InfoCard class="box" title="About text"/>
-    <InfoCard class="box" number="02" title="ZERO WASTE"/>
+    <NumberCard class="box" number="00" title="ZERO WASTE"/>
+    <InfoCard class="box" title="LOCALLY GROWN FLOWERS PRESSED FOR ETERNITY"/>
+    <InfoCard class="box" title="ECO-FRIENDLY AND SUSTAINABLE MATERIALS"/>
+    <InfoCard class="box" title="UNIQUE GIFTS THAT CAPTURE THE BEAUTY OF NATURE"/>
     <Footer/>
 
   </div>
@@ -44,6 +48,7 @@ import BannerCard from "@/components/BannerCard.vue";
   aspect-ratio: 1/1;
   grid-row: 3/5;
   grid-column: 1/3;
+  white-space: pre-line;
 }
 
 .box{
