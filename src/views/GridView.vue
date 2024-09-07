@@ -4,7 +4,8 @@ import NumberCard from "../components/NumberCard.vue";
 import ImageCard from "../components/ImageCard.vue";
 import InfoCard from "@/components/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
-import Section1 from "../views/Section1.vue";
+import Section1 from "../components/Section1.vue";
+import ContactCard from "@/components/ContactCard.vue";
 </script>
 
 <template>
@@ -25,7 +26,8 @@ import Section1 from "../views/Section1.vue";
     <InfoCard class="box" title="EMAIL" info="sales@florashop.com"></InfoCard>
     <InfoCard class="box" title="PHONE" info="+1 720.000.0271"></InfoCard>
     <InfoCard class="box" title="SOCIAL"></InfoCard>
-    <InfoCard class="box big3" title="CONTACT US"></InfoCard>
+    <ContactCard class="box big3"/>
+<!--    <InfoCard class="box big3" title="CONTACT US"></InfoCard>-->
     <Footer></Footer>
   </div>
 </template>
@@ -33,7 +35,7 @@ import Section1 from "../views/Section1.vue";
 <style scoped>
 
 .wrapper{
-  width: 80vw;
+  width: 76vw;
   display: grid;
   grid-template-columns: repeat(4,16vw);
   grid-template-rows: 16vw;

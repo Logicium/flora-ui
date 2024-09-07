@@ -25,26 +25,6 @@
 
 <style scoped>
 
-.title {
-  font-size: 1.3vw;
-  margin-left: 1vw;
-  text-align: left;
-  margin-top: 1vw;
-}
-
-.line{
-  background-color: black;
-  height: 4px;
-  width: 3vw;
-  margin-left: 1vw;
-  margin-top: 2vw;
-}
-.price{
-  margin-top: auto;
-  margin-left: 1vw;
-  margin-bottom: 1vw;
-}
-
 .image {
   background-position: 100% 100%;
   background-size: cover;
@@ -54,6 +34,28 @@
   align-items: normal;
   cursor: pointer;
   width:100%;
+  height: 100%;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 1.3vw;
+  margin-left: 1.5vw;
+  text-align: left;
+  margin-top: 0.8vw;
+}
+
+.line{
+  background-color: black;
+  height: 4px;
+  width: 3vw;
+  margin-left: 1.5vw;
+  margin-top: 1.5vw;
+}
+.price{
+  margin-top: auto;
+  margin-left: 1.5vw;
+  margin-bottom: 1.5vw;
 }
 
 </style>

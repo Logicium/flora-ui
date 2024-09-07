@@ -18,24 +18,25 @@ defineProps(['number','title'])
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    font-weight: 500;
   }
   .line{
     background-color: black;
     height: 4px;
     width: 3vw;
-    margin-left: 1vw;
+    margin-left: 1.4vw;
     margin-top: auto;
   }
   .number{
-    width: 100%;
     text-align: right;
-    font-size: 5vw;
+    font-size: 4vw;
+    margin-right: 1.4vw;
   }
   .title {
     font-size: 1.3vw;
     text-align: left;
-    margin-left: 1vw;
-    margin-top:1vw;
-    margin-bottom: 1vw;
+    margin-left: 1.4vw;
+    margin-top:0.8vw;
+    margin-bottom: 1.4vw;
   }
 </style>

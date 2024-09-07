@@ -1,5 +1,11 @@
 <script setup lang="ts">
 
+import router from "@/router";
+
+const route = function (route:string){
+  router.push(route);
+}
+
 </script>
 
 <template>
@@ -9,7 +15,7 @@
       <div class="text">blog</div>
       <div class="text">faqs</div>
       <div class="text">orders</div>
-      <div class="text">contact</div>
+      <div class="text" @click="route('/contact')">contact</div>
     </div>
   </div>
 </template>
