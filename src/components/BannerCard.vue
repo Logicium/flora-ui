@@ -34,6 +34,7 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
   width:100%;
   height: 100%;
   font-weight: 300;
+  cursor: default;
 }
 
 </style>

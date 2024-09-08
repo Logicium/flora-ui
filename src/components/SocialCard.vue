@@ -52,7 +52,7 @@ defineProps(['title'])
 }
 
 .title {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   text-align: left;
   margin-left: 1.5vw;
   margin-right: 1.5vw;

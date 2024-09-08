@@ -20,7 +20,7 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
   <div class="productWrap">
     <div class="nameWrap"><ImageCard :image=image :title=title /></div>
     <div class="priceWrap"><InfoCard/></div>
-    <NumberCard class="box" number="01" title="RELATED"/>
+    <NumberCard class="box" number="01" title="SUGGESTED"/>
     <InfoCard class="box"/>
     <InfoCard class="box"/>
     <SocialCard class="box" title="SHARE"/>

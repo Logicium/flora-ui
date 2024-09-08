@@ -19,6 +19,7 @@ defineProps(['number','title'])
     display: flex;
     flex-direction: column;
     font-weight: 500;
+    cursor: default;
   }
   .line{
     background-color: black;

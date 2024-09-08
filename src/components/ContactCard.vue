@@ -22,7 +22,7 @@
   background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content:stretch ;
 }
 
 .message{
@@ -34,7 +34,7 @@
   margin-right: 1.5vw;
   margin-bottom: 1.5vw;
   border: none;
-  border-bottom: black solid 2px;
+  border-bottom: #b6b6b6 solid 2px;
   resize: none;
 }
 
@@ -45,7 +45,7 @@ input{
   font-family: "Barlow",sans-serif;
   background-color: #f1f1f1;
   border: none;
-  border-bottom: black solid 2px;
+  border-bottom: #b6b6b6 solid 2px;
   flex: 1;
 }
 

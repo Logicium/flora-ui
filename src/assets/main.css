@@ -1,4 +1,5 @@
 @import 'base.css';
+@import 'keyframes.css';
 
 body{
   margin: 0;
@@ -14,4 +15,24 @@ svg{
   display: inline-block;
   height: 1.4vw;
   width: 1.4vw;
+}
+
+.click{
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus{
+  animation: inputFocus 0.5s forwards;
+}
+input:not(:focus),textarea:not(:focus){
+  animation: inputDefocus 0.5s forwards;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }

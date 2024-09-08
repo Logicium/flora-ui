@@ -42,6 +42,6 @@ const route = function (route:string){
   width: 76vw;
   height:6vw;
   display: flex;
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 </style>

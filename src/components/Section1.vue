@@ -24,5 +24,6 @@
   font-weight: 300;
   height: 36vw;
   display: flex;
+  cursor: default;
 }
 </style>

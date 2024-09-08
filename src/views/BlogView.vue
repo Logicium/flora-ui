@@ -15,28 +15,22 @@ const route = function (id:string){
 
 <template>
   <div class="blogWrap">
-    <div class="box image1" @click="route('01')">
-      <BannerCard image="/src/assets/flower3.jpg" title="NEW PLANT DROP THIS MONTH" price=""/>
+    <div class="image1" @click="route('01')">
+      <ImageCard image="/src/assets/flower3.jpg" title="NEW PLANT DROP THIS MONTH" price=""/>
     </div>
     <NumberCard class="box" number="07" title="09/07/2024"/>
-    <InfoCard class="box" title="DESCRIPTION"/>
-    <InfoCard class="box" title="AUTHOR" info="Kisora Thomas"/>
     <InfoCard class="box" title="TAGS" info="#newplants #shippingdates #announcement"/>
 
-    <div class="box image2">
-      <BannerCard image="/src/assets/flower4.jpg" title="HOW TO GROW DESERT ROSE" price=""/>
+    <div class="image2">
+      <ImageCard image="/src/assets/flower4.jpg" title="HOW TO GROW DESERT ROSE" price=""/>
     </div>
     <NumberCard class="box" number="03" title="09/03/2024"/>
-    <InfoCard class="box" title="DESCRIPTION"/>
-    <InfoCard class="box" title="AUTHOR" info="Kisora Thomas"/>
     <InfoCard class="box" title="TAGS" info="#plantcare #wateringguide #flowers"/>
 
-    <div class="box image3">
-      <BannerCard image="/src/assets/flower5.jpg" title="ALL ORDERS SHIPPING NOW" price=""/>
+    <div class="image3">
+      <ImageCard image="/src/assets/flower5.jpg" title="ALL ORDERS SHIPPING NOW" price=""/>
     </div>
     <NumberCard class="box" number="21" title="08/21/2024"/>
-    <InfoCard class="box" title="DESCRIPTION"/>
-    <InfoCard class="box" title="AUTHOR" info="Kisora Thomas"/>
     <InfoCard class="box" title="TAGS" info="#smallbusiness #shippingdates #announcement"/>
 
     <Footer/>
@@ -57,17 +51,17 @@ const route = function (id:string){
 
 .image1{
   grid-row: 1/3;
-  grid-column: 3/5;
+  grid-column: 1/4;
 }
 
 .image2{
   grid-row: 3/5;
-  grid-column: 3/5;
+  grid-column: 1/4;
 }
 
 .image3{
   grid-row: 5/7;
-  grid-column: 3/5;
+  grid-column: 1/4;
 }
 
 

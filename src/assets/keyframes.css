@@ -1,0 +1,17 @@
+@keyframes inputFocus {
+    from{
+        border-bottom: #b6b6b6 solid 2px;
+    }
+    to{
+        border-bottom: black solid 2px;
+    }
+}
+
+@keyframes inputDefocus {
+    from{
+        border-bottom: black solid 2px;
+    }
+    to{
+        border-bottom: #b6b6b6 solid 2px;
+    }
+}
