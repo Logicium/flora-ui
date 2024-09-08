@@ -18,7 +18,7 @@
 }
 
 .image{
-  background-image: url("../assets/flower2.jpg");
+  background-image: url("../assets/images/flower2.jpg");
   background-position: 100% 20%;
   background-size: cover;
   font-weight: 300;

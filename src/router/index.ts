@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Flora from '../Flora.vue'
-import GridView from "../views/GridView.vue";
+import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: GridView
+      component: HomeView
     },
     {
       path: '/contact',

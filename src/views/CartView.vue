@@ -1,13 +1,13 @@
 <script setup lang="ts">
 
-import SocialCard from "@/components/SocialCard.vue";
-import InfoCard from "@/components/InfoCard.vue";
-import NumberCard from "@/components/NumberCard.vue";
+import SocialCard from "@/components/cards/SocialCard.vue";
+import InfoCard from "@/components/cards/InfoCard.vue";
+import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
-  <div class="cartWrap">
+  <div class="grid">
     <div class="cart">
       <div class="line"/>
       <div class="title">SHOPPING CART</div>
@@ -28,14 +28,6 @@ import Footer from "@/components/Footer.vue";
 </template>
 
 <style scoped>
-.cartWrap{
-  display: grid;
-  grid-template-columns: repeat(4,16vw);
-  grid-template-rows: 16vw;
-  column-gap: 4vw;
-  row-gap: 4vw;
-  width: 76vw;
-}
 
 .divider{
   height: 1px;

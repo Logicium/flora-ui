@@ -1,15 +1,15 @@
 <script setup lang="ts">
 
-import ImageCard from "@/components/ImageCard.vue";
-import InfoCard from "@/components/InfoCard.vue";
-import NumberCard from "@/components/NumberCard.vue";
+import ImageCard from "@/components/cards/ImageCard.vue";
+import InfoCard from "@/components/cards/InfoCard.vue";
+import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
-import AddressCard from "@/components/AddressCard.vue";
+import AddressCard from "@/components/cards/AddressCard.vue";
 </script>
 
 <template>
-  <div class="accountWrap">
-    <div class="box title"><ImageCard title="ACCOUNT" image="/src/assets/flower7.jpg"/></div>
+  <div class="grid">
+    <div class="box title"><ImageCard title="ACCOUNT" image="/src/assets/images/flower7.jpg"/></div>
     <div class="box shipping"><AddressCard title="SHIPPING INFO"/></div>
     <div class="box billing"><AddressCard title="BILLING INFO"/></div>
     <InfoCard class="box click" title="YOUR ORDERS"/>
@@ -22,14 +22,6 @@ import AddressCard from "@/components/AddressCard.vue";
 
 <style scoped>
 
-.accountWrap{
-  width: 76vw;
-  display: grid;
-  grid-template-columns: repeat(4,16vw);
-  grid-template-rows: 16vw;
-  column-gap: 4vw;
-  row-gap: 4vw;
-}
 .title{
   grid-row: 1/3;
   grid-column: 1/3;

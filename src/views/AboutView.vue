@@ -1,23 +1,21 @@
 <script setup lang="ts">
 
-import InfoCard from "@/components/InfoCard.vue";
-import ImageCard from "@/components/ImageCard.vue";
+import InfoCard from "@/components/cards/InfoCard.vue";
+import ImageCard from "@/components/cards/ImageCard.vue";
 import Footer from "@/components/Footer.vue";
-import NumberCard from "@/components/NumberCard.vue";
-import BannerCard from "@/components/BannerCard.vue";
+import NumberCard from "@/components/cards/NumberCard.vue";
+import BannerCard from "@/components/cards/BannerCard.vue";
+import data from "@/data/data";
+
 </script>
 
 <template>
-  <div class="aboutWrap">
+  <div class="grid">
     <div class="titleWrap">
-      <InfoCard class="box" title="HANDMADE CARDS WITH A STORY" info="Nestled in the heart of Trinidad, Colorado, our small business is dedicated to crafting unique and heartfelt handmade cards featuring pressed flowers grown right here in our community. Every bloom is lovingly pressed, preserving its delicate colors and textures for eternity.
-
-      Each pressed flower tells a unique story, adding a special meaning to every card. A vibrant rose may symbolize love and passion, while a delicate daisy can represent innocence and purity. The symbolism of each flower is carefully considered to enhance the message you wish to convey.
-
-      Whether you're sending a birthday greeting, expressing gratitude, or sharing a token of affection, our handmade creations offer a touch of natural elegance and warmth. We invite you to explore our collection and discover the perfect card to convey your message."/>
+      <InfoCard class="box" title="HANDMADE CARDS WITH A STORY" :info="data.about"/>
     </div>
     <div class="imageWrap">
-      <BannerCard title="ABOUT" image="/src/assets/flower5.jpg"/>
+      <BannerCard title="ABOUT" image="/src/assets/images/flower5.jpg"/>
     </div>
     <NumberCard class="box" number="00" title="ZERO WASTE"/>
     <InfoCard class="box" title="LOCALLY GROWN FLOWERS PRESSED FOR ETERNITY"/>
@@ -29,15 +27,6 @@ import BannerCard from "@/components/BannerCard.vue";
 </template>
 
 <style scoped>
-
-.aboutWrap{
-  width: 76vw;
-  display: grid;
-  grid-template-columns: repeat(4,16vw);
-  grid-template-rows: 16vw;
-  column-gap: 4vw;
-  row-gap: 4vw;
-}
 
 .imageWrap{
   grid-row: 1/5;

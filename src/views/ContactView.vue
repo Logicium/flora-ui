@@ -1,17 +1,17 @@
 <script setup lang="ts">
 
-import ImageCard from "@/components/ImageCard.vue";
-import InfoCard from "@/components/InfoCard.vue";
+import ImageCard from "@/components/cards/ImageCard.vue";
+import InfoCard from "@/components/cards/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
-import ContactCard from "@/components/ContactCard.vue";
-import BannerCard from "@/components/BannerCard.vue";
-import SocialCard from "@/components/SocialCard.vue";
+import ContactCard from "@/components/cards/ContactCard.vue";
+import BannerCard from "@/components/cards/BannerCard.vue";
+import SocialCard from "@/components/cards/SocialCard.vue";
 </script>
 
 <template>
-<div class="contactWrap">
+<div class="grid">
   <div class="imageWrap">
-    <BannerCard title="CONTACT" image="/src/assets/flower6.jpg"/>
+    <BannerCard title="CONTACT" image="/src/assets/images/flower6.jpg"/>
   </div>
   <div class="infoWrap">
     <ContactCard/>
@@ -25,14 +25,7 @@ import SocialCard from "@/components/SocialCard.vue";
 </template>
 
 <style scoped>
-.contactWrap{
-  width: 76vw;
-  display: grid;
-  grid-template-columns: repeat(4,16vw);
-  grid-template-rows: 16vw;
-  column-gap: 4vw;
-  row-gap: 4vw;
-}
+
 .infoWrap{
   aspect-ratio: 1/1;
   grid-row: 1/3;

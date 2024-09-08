@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import UserIcon from "@/components/icons/UserIcon.vue";
-import ShopIcon from "@/components/icons/ShopIcon.vue";
-import InstaIcon from "@/components/icons/InstaIcon.vue";
-import FacebookIcon from "@/components/icons/FacebookIcon.vue";
-import ShareIcon from "@/components/icons/ShareIcon.vue";
+import UserIcon from "@/assets/icons/UserIcon.vue";
+import ShopIcon from "@/assets/icons/ShopIcon.vue";
+import InstaIcon from "@/assets/icons/InstaIcon.vue";
+import FacebookIcon from "@/assets/icons/FacebookIcon.vue";
+import ShareIcon from "@/assets/icons/ShareIcon.vue";
 
 defineProps(['title'])
 </script>

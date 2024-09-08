@@ -1,14 +1,10 @@
-@import 'base.css';
+@import 'app.css';
 @import 'keyframes.css';
 
 body{
   margin: 0;
   background-color: white;
 
-}
-#app {
-  margin: 0 auto;
-  font-weight: normal;
 }
 
 svg{
@@ -21,6 +17,15 @@ svg{
   cursor: pointer;
 }
 
+.grid{
+  width: 76vw;
+  display: grid;
+  grid-template-columns: repeat(4,16vw);
+  grid-template-rows: 16vw;
+  column-gap: 4vw;
+  row-gap: 4vw;
+}
+
 input:focus,
 textarea:focus{
   animation: inputFocus 0.5s forwards;
@@ -28,8 +33,6 @@ textarea:focus{
 input:not(:focus),textarea:not(:focus){
   animation: inputDefocus 0.5s forwards;
 }
-
-
 input:focus,
 select:focus,
 textarea:focus,

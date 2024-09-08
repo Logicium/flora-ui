@@ -2,7 +2,6 @@
 import { RouterLink, RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import Section1 from "./components/Section1.vue";
-import GridView from "./views/GridView.vue";
 </script>
 
 <template>
