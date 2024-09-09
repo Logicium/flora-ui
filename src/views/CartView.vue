@@ -53,6 +53,7 @@ import Footer from "@/components/Footer.vue";
   flex-direction: column;
   min-height: 36vw;
   font-weight: 500;
+  font-size: 1.2vw;
 }
 
 .title{
@@ -68,12 +69,5 @@ import Footer from "@/components/Footer.vue";
   display: flex;
 }
 
-.line{
-  background-color: black;
-  height: 4px;
-  width: 3vw;
-  margin-left: 1.5vw;
-  margin-top: 1.5vw;
-}
 
 </style>

@@ -22,14 +22,6 @@ defineProps(['title','info'])
   width: 100%;
 }
 
-.line{
-  background-color: black;
-  height: 4px;
-  width: 3vw;
-  margin-left: 1.5vw;
-  margin-top: 1.5vw;
-}
-
 .title {
   font-size: 1.2vw;
   text-align: left;

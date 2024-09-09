@@ -49,14 +49,6 @@ input{
   flex: 1;
 }
 
-.line{
-  background-color: black;
-  height: 4px;
-  width: 3vw;
-  margin-left: 1.5vw;
-  margin-top: 1.5vw;
-}
-
 .button{
   background-color: black;
   color: #f1f1f1;

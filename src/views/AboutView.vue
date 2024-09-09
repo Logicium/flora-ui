@@ -6,13 +6,14 @@ import Footer from "@/components/Footer.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import BannerCard from "@/components/cards/BannerCard.vue";
 import data from "@/data/data";
+import ParagraphCard from "@/components/cards/ParagraphCard.vue";
 
 </script>
 
 <template>
   <div class="grid">
     <div class="titleWrap">
-      <InfoCard class="box" title="HANDMADE CARDS WITH A STORY" :info="data.about"/>
+      <ParagraphCard class="box" title="HANDMADE CARDS WITH A STORY" :info="data.about"/>
     </div>
     <div class="imageWrap">
       <BannerCard title="ABOUT" image="/src/assets/images/flower5.jpg"/>

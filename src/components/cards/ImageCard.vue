@@ -45,13 +45,6 @@
   margin-top: 0.8vw;
 }
 
-.line{
-  background-color: black;
-  height: 4px;
-  width: 3vw;
-  margin-left: 1.5vw;
-  margin-top: 1.5vw;
-}
 .price{
   margin-top: auto;
   margin-left: 1.5vw;

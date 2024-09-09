@@ -26,6 +26,14 @@ svg{
   row-gap: 4vw;
 }
 
+.line{
+  background-color: black;
+  height: 4px;
+  width: 3vw;
+  margin-left: 1.5vw;
+  margin-top: 1.5vw;
+}
+
 input:focus,
 textarea:focus{
   animation: inputFocus 0.5s forwards;

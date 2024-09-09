@@ -1,5 +1,6 @@
 <script setup lang="ts">
 defineProps(['title'])
+import data from "../../data/data";
 </script>
 
 <template>
@@ -13,8 +14,7 @@ defineProps(['title'])
     <input placeholder="zipcode">
     <input placeholder="state" list="states"/>
     <datalist id="states">
-      <option>Colorado</option>
-      <option>New Mexico</option>
+        <option v-for="state in data.states" :key=state.label :value=state.value />
     </datalist>
     <input placeholder="email">
     <input placeholder="phone">
@@ -31,14 +31,6 @@ defineProps(['title'])
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
-
-.line{
-  background-color: black;
-  height: 4px;
-  width: 3vw;
-  margin-left: 1.5vw;
-  margin-top: 1.5vw;
 }
 
 input{
