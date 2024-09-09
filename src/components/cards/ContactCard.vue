@@ -73,5 +73,12 @@ input{
   font-weight: 500;
 }
 
+input:focus,
+textarea:focus{
+  animation: inputFocus 0.5s forwards;
+}
+input:not(:focus),textarea:not(:focus){
+  animation: inputDefocus 0.5s forwards;
+}
 
 </style>

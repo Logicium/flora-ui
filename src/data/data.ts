@@ -7,22 +7,36 @@ const data = {
     },
     cart: [
         {
-            product:'1',
+            productId:'1',
             name:'LOVELESS LILY',
             price: 6,
             quantity:1,
+            total: 6,
+            image:"/src/assets/images/flower5.jpg"
         },
         {
-            product:'2',
-            name:'LONELY LAVENDER',
+            productId:'2',
+            name:'LAVENDER LONESOME',
             price: 6,
             quantity:2,
+            total: 12,
+            image:"/src/assets/images/flower6.jpg"
         },
         {
-            product:'2',
+            productId:'3',
             name:'HEARTBREAK HYACINTHS',
             price: 6,
             quantity:3,
+            total:18,
+            image:"/src/assets/images/flower7.jpg"
+        },
+        {
+            productId:'4',
+            name:'HEARTBREAK HYACINTHS',
+            price: 6,
+            quantity:3,
+            total: 18,
+            image:"/src/assets/images/flower7.jpg"
         }
     ],
 

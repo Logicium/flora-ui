@@ -5,7 +5,14 @@ import InfoCard from "@/components/cards/InfoCard.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
 import CartCard from "@/components/cards/CartCard.vue";
-import data from "@/data/data";
+import {useCartStore} from "@/stores/CartStore";
+
+const cartStore = useCartStore();
+
+const calcTotal = function (){
+  return cartStore.cart.reduce((total,item)=>total+item.total,0)
+}
+
 </script>
 
 <template>
@@ -15,12 +22,19 @@ import data from "@/data/data";
       <div class="title">SHOPPING CART</div>
       <div class="headers">
         <div class="product">PRODUCT</div>
-        <div class="tail">PRICE</div>
-        <div class="tail">QUANTITY</div>
-        <div class="">TOTAL</div>
+        <div class="price">PRICE</div>
+        <div class="quantity">QUANTITY</div>
+        <div class="total">TOTAL</div>
       </div>
       <div class="divider"></div>
-      <CartCard v-for="cartItem in data.cart" :data="cartItem"/>
+      <div class="cartWrap">
+        <CartCard v-for="cartItem in cartStore.cart" :data="cartItem"/>
+      </div>
+      <div class="headers">
+        <div class="finaltotal1">TOTAL</div>
+        <div class="finaltotal2">${{calcTotal()}}</div>
+      </div>
+      <div class="button">CHECKOUT</div>
 
     </div>
     <NumberCard class="box" number="01" title="SUGGESTED"/>
@@ -41,20 +55,42 @@ import data from "@/data/data";
   margin-top: 1.5vw;
 }
 
-.tail {
-  width: 15%;
+.finaltotal1{
+  width: 50%;
+  margin-bottom: 3vw;
+}
+
+.finaltotal2{
+  width: 50%;
+  text-align: right;
+}
+.product{
+
 }
 
 .headers{
   display: flex;
-  justify-content: space-between;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-top: 1.5vw;
 }
 
 .product{
-  width: 50%;
+  width: 70%
+}
+
+.price{
+  width: 10%;
+}
+
+.quantity {
+  width: 10%;
+  text-align: center;
+}
+
+.total{
+  width: 10%;
+  text-align: right;
 }
 
 .cart{
@@ -63,9 +99,9 @@ import data from "@/data/data";
   background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
-  min-height: 36vw;
   font-weight: 500;
   font-size: 1.2vw;
+  flex: auto;
 }
 
 .title{
@@ -74,6 +110,21 @@ import data from "@/data/data";
   margin-left: 1.5vw;
   margin-top: 0.8vw;
   margin-bottom: 1.5vw;
+}
+
+.button{
+  background-color: black;
+  color: #f1f1f1;
+  text-align: center;
+  width: 13vw;
+  height: 3vw;
+  margin-top: auto;
+  margin-left: 1.5vw;
+  margin-bottom: 1.5vw;
+  cursor: pointer;
+  font-size: 1.2vw;
+  align-content: center;
+  font-weight: 500;
 }
 
 </style>

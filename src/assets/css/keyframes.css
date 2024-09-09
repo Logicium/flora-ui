@@ -15,3 +15,25 @@
         border-bottom: #b6b6b6 solid 2px;
     }
 }
+
+@keyframes fade {
+    from{
+        background-color: #f1f1f1;
+        color: black;
+    }
+    to{
+        background-color: black;
+        color: #f1f1f1;
+    }
+}
+
+@keyframes unfade {
+    from{
+        background-color: black;
+        color: #f1f1f1;
+    }
+    to{
+        background-color: #f1f1f1;
+        color: black;
+    }
+}
