@@ -4,6 +4,8 @@ import SocialCard from "@/components/cards/SocialCard.vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
+import CartCard from "@/components/cards/CartCard.vue";
+import data from "@/data/data";
 </script>
 
 <template>
@@ -12,12 +14,14 @@ import Footer from "@/components/Footer.vue";
       <div class="line"/>
       <div class="title">SHOPPING CART</div>
       <div class="headers">
-        <div>PRODUCT</div>
-        <div>PRICE</div>
-        <div>QUANTITY</div>
-        <div>TOTAL</div>
+        <div class="product">PRODUCT</div>
+        <div class="tail">PRICE</div>
+        <div class="tail">QUANTITY</div>
+        <div class="">TOTAL</div>
       </div>
       <div class="divider"></div>
+      <CartCard v-for="cartItem in data.cart" :data="cartItem"/>
+
     </div>
     <NumberCard class="box" number="01" title="SUGGESTED"/>
     <InfoCard class="box"/>
@@ -37,12 +41,20 @@ import Footer from "@/components/Footer.vue";
   margin-top: 1.5vw;
 }
 
+.tail {
+  width: 15%;
+}
+
 .headers{
   display: flex;
   justify-content: space-between;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-top: 1.5vw;
+}
+
+.product{
+  width: 50%;
 }
 
 .cart{
@@ -63,11 +75,5 @@ import Footer from "@/components/Footer.vue";
   margin-top: 0.8vw;
   margin-bottom: 1.5vw;
 }
-
-.box{
-  aspect-ratio: 1/1;
-  display: flex;
-}
-
 
 </style>

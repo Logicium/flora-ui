@@ -40,8 +40,6 @@ import AddressCard from "@/components/cards/AddressCard.vue";
 .box{
   aspect-ratio: 1/1;
   display: flex;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 </style>

@@ -54,9 +54,4 @@ import SocialCard from "@/components/cards/SocialCard.vue";
   grid-column: 3 / 5;
 }
 
-.box{
-  aspect-ratio: 1/1;
-  display: flex;
-}
-
 </style>

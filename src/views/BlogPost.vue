@@ -44,9 +44,4 @@ const props = defineProps({
   display: flex;
 }
 
-.box{
-  aspect-ratio: 1/1;
-  display: flex;
-}
-
 </style>

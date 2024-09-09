@@ -41,9 +41,4 @@ import ParagraphCard from "@/components/cards/ParagraphCard.vue";
   white-space: pre-line;
 }
 
-.box{
-  display: flex;
-  aspect-ratio: 1/1;
-}
-
 </style>

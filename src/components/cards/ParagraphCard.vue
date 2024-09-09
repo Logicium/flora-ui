@@ -10,7 +10,7 @@ defineProps({
     <div class="line"></div>
     <div class="title">{{title}}</div>
     <div class="paraWrap">
-      <div class="paragraph">{{info.intro}}</div>
+      <p class="paragraph">{{info.intro}}</p>
       <div class="paragraph">{{info.symbolism}}</div>
       <div class="paragraph">{{info.invitation}}</div>
     </div>
@@ -34,15 +34,16 @@ defineProps({
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-top: 0.8vw;
+  margin-bottom: 1.5vw;
 }
 
 .paragraph{
+  height: 100%;
   max-height:100%;
   font-size: 1vw;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-bottom: 1.5vw;
-  align-self: center;
 }
 
 .paraWrap{

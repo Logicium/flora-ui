@@ -17,6 +17,13 @@ svg{
   cursor: pointer;
 }
 
+.box{
+  display: flex;
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .grid{
   width: 76vw;
   display: grid;

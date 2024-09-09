@@ -45,9 +45,4 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
   background-color: #f1f1f1;
 }
 
-.box{
-  aspect-ratio: 1/1;
-  display: flex;
-}
-
 </style>

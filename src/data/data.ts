@@ -5,6 +5,27 @@ const data = {
         symbolism: "Each pressed flower tells a unique story, adding a special meaning to every card. A vibrant rose may symbolize love and passion, while a delicate daisy can represent innocence and purity. The symbolism of each flower is carefully considered to enhance the message you wish to convey.",
         invitation: "Whether you're sending a birthday greeting, expressing gratitude, or sharing a token of affection, our handmade creations offer a touch of natural elegance and warmth. We invite you to explore our collection and discover the perfect card to convey your message."
     },
+    cart: [
+        {
+            product:'1',
+            name:'LOVELESS LILY',
+            price: 6,
+            quantity:1,
+        },
+        {
+            product:'2',
+            name:'LONELY LAVENDER',
+            price: 6,
+            quantity:2,
+        },
+        {
+            product:'2',
+            name:'HEARTBREAK HYACINTHS',
+            price: 6,
+            quantity:3,
+        }
+    ],
+
     states:[
         { label: "Alaska", value: "Alaska" },
         { label: "Alabama", value: "Alabama" },

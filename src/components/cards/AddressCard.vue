@@ -16,8 +16,8 @@ import data from "../../data/data";
     <datalist id="states">
         <option v-for="state in data.states" :key=state.label :value=state.value />
     </datalist>
-    <input placeholder="email">
-    <input placeholder="phone">
+    <input placeholder="email" type="email">
+    <input placeholder="phone" type="tel">
     <div class="button">SAVE CHANGES</div>
   </div>
 </template>
