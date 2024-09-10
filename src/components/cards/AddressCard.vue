@@ -10,7 +10,7 @@ const firstName = ref('');
 
 <template>
 
-  <div class="addressWrap">
+  <form class="addressWrap">
     <div class="line"></div>
     <div class="title">{{title}}</div>
     <div class="inputWrap">
@@ -27,7 +27,7 @@ const firstName = ref('');
       <input placeholder="phone" type="tel">
     </div>
     <div class="buttonWrap"><div class="button">SAVE CHANGES</div></div>
-  </div>
+  </form>
 </template>
 
 <style scoped>
@@ -44,6 +44,7 @@ input{
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   font-family: "Barlow",sans-serif;
+  font-size: 1vw;
   background-color: #f1f1f1;
   border: none;
   border-bottom: #b6b6b6 solid 2px;

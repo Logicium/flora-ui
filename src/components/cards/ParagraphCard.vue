@@ -44,6 +44,7 @@ defineProps({
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-bottom: 1.5vw;
+  line-height: 2vw;
 }
 
 .paraWrap{

@@ -36,7 +36,7 @@ const imageUrl = computed(()=> 'url("'+props.data.image+'")').value;
 <template>
 
   <div class="cartCard">
-    <div class="image" @click="route(data.productId)"></div>
+    <div class="image" @click="route(data.id)"></div>
     <div class="product">{{data.name}}</div>
     <div class="price">${{data.price}}</div>
     <div class="quantity">
@@ -75,6 +75,7 @@ input{
   border: none;
   font-family: "Barlow",sans-serif;
   cursor: default;
+  font-size: 1.2vw;
 }
 
 .image{

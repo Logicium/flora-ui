@@ -4,7 +4,9 @@ import SearchIcon from "@/assets/icons/SearchIcon.vue";
 import ShopIcon from "@/assets/icons/ShopIcon.vue";
 import UserIcon from "@/assets/icons/UserIcon.vue";
 import router from "../router";
+import {useCartStore} from "@/stores/CartStore";
 
+const cartStore = useCartStore();
 const route = function (route:string){
   router.push(route);
 }
@@ -22,7 +24,10 @@ const route = function (route:string){
         <div class="text" @click="route('/about')">A B O U T</div>
         <div class="text" @click="route('/contact')">C O N T A C T</div>
         <div class="icon"><SearchIcon></SearchIcon></div>
-        <div class="icon" @click="route('/cart')"><ShopIcon></ShopIcon></div>
+        <div class="icon" @click="route('/cart')">
+          <div v-if="cartStore.cart.length>0" class="indicator"/>
+          <ShopIcon/>
+        </div>
         <div class="icon" @click="route('/account')"><UserIcon></UserIcon></div>
       </div>
     </div>
@@ -45,6 +50,19 @@ const route = function (route:string){
   display: inline-block;
 }
 
+.indicator{
+  height: 0.5vw;
+  width: 0.5vw;
+  background-color: black;
+  position: absolute;
+  top:50%;
+  transform: translateX(200%);
+}
+
+.indicatorWrap{
+  position: relative;
+  width: 30%;
+}
 .title{
   width: 50%;
 }

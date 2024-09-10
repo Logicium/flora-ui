@@ -28,6 +28,7 @@ const addCartItem = function(){
     currentItem.total = currentItem.price * currentItem.quantity;
   }
   buttonText.value = 'ITEM ADDED';
+  setTimeout(() => buttonText.value = "ADD TO CART", 1500);
 }
 
 </script>
@@ -36,7 +37,7 @@ const addCartItem = function(){
 
   <div class="productCard">
     <div class="line"></div>
-    <div class="price">$ {{data.price}}</div>
+    <div class="price">${{data.price}}</div>
     <div class="description">{{data.description}}</div>
     <div class="quantity">QUANTITY</div>
     <div class="quantityWrap">
@@ -70,7 +71,10 @@ const addCartItem = function(){
 
 .description{
   margin-left: 1.5vw;
+  margin-right: 1.5vw;
   margin-top: 1.5vw;
+  line-height: 3vw;
+  text-align: justify;
 }
 
 .quantity{
@@ -108,6 +112,7 @@ input{
   height: 3vw;
   border: none;
   font-family: "Barlow",sans-serif;
+  font-size: 1.2vw;
   cursor: default;
 }
 
