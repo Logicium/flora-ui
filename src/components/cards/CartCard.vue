@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import {computed, ref} from "vue";
 import router from "@/router";
+import {useCartStore} from "@/stores/CartStore";
 
 const props = defineProps({
+  index:{type:Number,default:0},
   data: { type: Object, default: ()=>{}},
 })
+
+const cartStore = useCartStore();
 
 const calcTotal = function (){
   props.data.total = props.data.price * props.data.quantity;
@@ -16,7 +20,8 @@ const plus = function (){
 }
 
 const minus = function (){
-  if(props.data.quantity>0) props.data.quantity--;
+  if(props.data.quantity>1){props.data.quantity--;}
+  else{cartStore.cart.splice(props.index,1);}
   calcTotal();
 }
 
@@ -35,7 +40,7 @@ const imageUrl = computed(()=> 'url("'+props.data.image+'")').value;
     <div class="product">{{data.name}}</div>
     <div class="price">${{data.price}}</div>
     <div class="quantity">
-      <input type="number" :value="data.quantity" min="0" max="20"/>
+      <input type="number" :value="data.quantity" readonly="readonly"/>
       <div class="minus" @click="minus">-</div>
       <div class="plus" @click="plus">+</div>
     </div>
@@ -69,6 +74,7 @@ input{
   width: 2vw;
   border: none;
   font-family: "Barlow",sans-serif;
+  cursor: default;
 }
 
 .image{

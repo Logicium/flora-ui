@@ -28,14 +28,17 @@ const calcTotal = function (){
       </div>
       <div class="divider"></div>
       <div class="cartWrap">
-        <CartCard v-for="cartItem in cartStore.cart" :data="cartItem"/>
+        <CartCard v-for="(cartItem, index) in cartStore.cart" :data="cartItem"/>
+        <div class="empty" v-if="calcTotal()==0">
+          <div>CART IS EMPTY</div>
+        </div>
       </div>
+      <div class="divider" v-if="calcTotal()==0"></div>
       <div class="headers">
         <div class="finaltotal1">TOTAL</div>
         <div class="finaltotal2">${{calcTotal()}}</div>
       </div>
-      <div class="button">CHECKOUT</div>
-
+      <div class="button" v-if="calcTotal()>0">CHECKOUT</div>
     </div>
     <NumberCard class="box" number="01" title="SUGGESTED"/>
     <InfoCard class="box"/>
@@ -53,6 +56,26 @@ const calcTotal = function (){
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-top: 1.5vw;
+}
+
+.top{
+  margin-top: auto;
+}
+
+.bottom{
+  margin-top: auto;
+  height: 1px;
+  background-color: #b6b6b6;
+  margin-bottom: 1.5vw;
+}
+
+.empty{
+  height:16vw;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  margin-top: 1.5vw;
+  text-align: center;
+  align-content: center;
 }
 
 .finaltotal1{

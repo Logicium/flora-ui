@@ -4,10 +4,8 @@ import {useLocalStorage, useStorage} from "@vueuse/core";
 export const useCartStore = defineStore({
     id:"CartStore",
     state:()=>{
-
         return {
             cart: useStorage('cart',data.cart)
         };
-
     },
 })
