@@ -1,14 +1,14 @@
 import './assets/css/main.css'
 
-import { createApp } from 'vue'
+import { createApp, watch } from 'vue'
 import { createPinia } from 'pinia'
 
 import Flora from './Flora.vue'
 import router from './router'
 
 const app = createApp(Flora)
+const pinia = createPinia();
 
-app.use(createPinia())
+app.use(pinia)
 app.use(router)
-
 app.mount('#app')

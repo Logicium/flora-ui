@@ -6,22 +6,17 @@ const props = defineProps({
   data: { type: Object, default: ()=>{}},
 })
 
-const quantity = ref(props.data.quantity);
-const total = ref(props.data.price * props.data.quantity)
-
 const calcTotal = function (){
-  const newTotal = props.data.price * quantity.value;
-  total.value = newTotal;
-  props.data.total = newTotal;
+  props.data.total = props.data.price * props.data.quantity;
 }
 
 const plus = function (){
-  quantity.value++;
+  props.data.quantity++;
   calcTotal();
 }
 
 const minus = function (){
-  if(quantity.value>0) quantity.value--;
+  if(props.data.quantity>0) props.data.quantity--;
   calcTotal();
 }
 
@@ -40,11 +35,11 @@ const imageUrl = computed(()=> 'url("'+props.data.image+'")').value;
     <div class="product">{{data.name}}</div>
     <div class="price">${{data.price}}</div>
     <div class="quantity">
-      <input type="number" :value="quantity" min="0" max="20"/>
+      <input type="number" :value="data.quantity" min="0" max="20"/>
       <div class="minus" @click="minus">-</div>
       <div class="plus" @click="plus">+</div>
     </div>
-    <div class="total">${{ total }}</div>
+    <div class="total">${{ data.total }}</div>
   </div>
   <div class="divider"></div>
 
