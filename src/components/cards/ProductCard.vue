@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
+import {useFetch} from "@vueuse/core";
 
 const quantity = ref(1);
 
@@ -12,32 +13,33 @@ const plus = function (){
   quantity.value++;
 }
 
-let data = ref({});
+//let data = ref(null);
 const route = useRoute()
+const loadedData = ref(null);
 
-onMounted(async () =>{
-  try{
-    const response = await fetch('http://localhost:3000/product/'+route.params.id)
-    data = await response.json();
-    console.log(data);
-  }catch(error){
-    console.log(error)
-  }
+const {isFetching, data} = useFetch('http://localhost:3000/product/'+route.params.id).json()
+watch(data,(newData) => {
+  loadedData.value = newData;
 })
 
 </script>
 
 <template>
-  <div v-if="!data"> Loading... </div>
+
+  <div v-if="!loadedData"> Loading... </div>
   <div v-else class="productCard">
     <div class="line"></div>
-    <div class="price">{{data.price}}</div>
-    <div class="description">{{data.description}}</div>
+    <div class="price">$ {{loadedData.price}}</div>
+    <div class="description">{{loadedData.description}}</div>
     <div class="quantity">QUANTITY</div>
     <div class="quantityWrap">
       <input type="number" :value="quantity" readonly="readonly"/>
-      <div class="minus" @click="minus">-</div>
-      <div class="plus" @click="plus">+</div>
+      <div class="minus" @click="minus">
+        <div>-</div>
+      </div>
+      <div class="plus" @click="plus">
+        <div>+</div>
+      </div>
     </div>
     <div class="button">ADD TO CART</div>
   </div>
@@ -51,27 +53,43 @@ onMounted(async () =>{
   flex-direction: column;
   font-weight: 500;
   width: 100%;
+  font-size: 1.2vw;
+}
+
+.price{
+  margin-left: 1.5vw;
+  margin-top: 1.5vw;
+}
+
+.description{
+  margin-left: 1.5vw;
+  margin-top: 1.5vw;
+}
+
+.quantity{
+  margin-top: auto;
+  margin-left: 1.5vw;
 }
 
 .minus{
   height: 3vw;
-  width: 4vw;
+  width: 100%;
   border: solid black 1px;
   text-align: center;
   cursor: pointer;
-  margin-left: -5px;
   animation: unfade 0.5s forwards;
+  align-content: center;
 }
 
 .plus{
   height: 3vw;
-  width:4vw;
+  width: 100%;
   border: solid black 1px;
   border-left: none;
   text-align: center;
   cursor: pointer;
-  margin-left: -5px;
   animation: unfade 0.5s forwards;
+  align-content: center;
 }
 
 .plus:hover, .minus:hover{
@@ -92,8 +110,11 @@ input::-webkit-inner-spin-button {
 }
 
 .quantityWrap{
-  justify-content: space-evenly;
+  margin-left: 1.5vw;
+  margin-top: 1.5vw;
+  width: 13vw;
   display: flex;
+  justify-content: space-between;
 }
 
 .button{
@@ -102,7 +123,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
   width: 13vw;
   height: 3vw;
-  margin-top: auto;
+  margin-top: 1.5vw;
   margin-left: 1.5vw;
   margin-bottom: 1.5vw;
   cursor: pointer;
