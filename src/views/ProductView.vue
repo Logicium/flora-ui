@@ -1,26 +1,27 @@
 <script setup lang="ts">
 
-import {computed} from "vue";
+import {computed, ref, watch} from "vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import ImageCard from "@/components/cards/ImageCard.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
 import SocialCard from "@/components/cards/SocialCard.vue";
 import ProductCard from "@/components/cards/ProductCard.vue";
+import {useRoute} from "vue-router";
+import {useFetch} from "@vueuse/core";
 
-const props = defineProps({
-  image:  { type: String, default: '/src/assets/images/flower7.jpg'},
-  title:  { type: String, default: 'PRODUCT 00' },
-  price: { type: String, default: '$4' },
-})
-const imageUrl = computed(()=> 'url("'+props.image+'")').value;
+const route = useRoute()
+const loadedData = ref(null);
+const {isFetching, data} = useFetch('http://localhost:3000/product/'+route.params.id).json()
+watch(data,(newData) => {loadedData.value = newData;})
 
 </script>
 
 <template>
-  <div class="grid">
-    <div class="nameWrap"><ImageCard :image=image :title=title /></div>
-    <div class="priceWrap"><ProductCard/></div>
+  <div v-if="!loadedData"> Loading... </div>
+  <div v-else class="grid">
+    <div class="nameWrap"><ImageCard :image=loadedData.image :title=loadedData.name /></div>
+    <div class="priceWrap"><ProductCard :data="loadedData"/></div>
     <NumberCard class="box" number="01" title="SUGGESTED"/>
     <InfoCard class="box"/>
     <InfoCard class="box"/>

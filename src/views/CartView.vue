@@ -28,7 +28,7 @@ const calcTotal = function (){
       </div>
       <div class="divider"></div>
       <div class="cartWrap">
-        <CartCard v-for="(cartItem, index) in cartStore.cart" :data="cartItem"/>
+        <CartCard v-for="(cartItem,index) in cartStore.cart" :index="index" :data="cartItem"/>
         <div class="empty" v-if="calcTotal()==0">
           <div>CART IS EMPTY</div>
         </div>

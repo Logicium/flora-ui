@@ -4,7 +4,7 @@ import router from "@/router";
 import {useCartStore} from "@/stores/CartStore";
 
 const props = defineProps({
-  index:{type:Number,default:0},
+  index: {type:Number},
   data: { type: Object, default: ()=>{}},
 })
 

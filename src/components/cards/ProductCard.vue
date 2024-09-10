@@ -2,35 +2,42 @@
 import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import {useFetch} from "@vueuse/core";
+import {useCartStore} from "@/stores/CartStore";
 
+const cartStore = useCartStore();
 const quantity = ref(1);
+const props = defineProps({ data: { type: Object, default: ()=>{}} })
+const minus = function (){ if (quantity.value > 1) quantity.value--; }
+const plus = function (){ quantity.value++; }
 
-const minus = function (){
-  if (quantity.value > 1) quantity.value--;
+
+const buttonText = ref('ADD TO CART')
+
+const exists = function (id:number){
+  return cartStore.cart.some(cartItem => cartItem.id === id);
 }
+const addCartItem = function(){
+  let cartItem = Object.assign({},props.data);
+  cartItem.quantity = quantity.value;
+  cartItem.total = props.data.price * quantity.value;
 
-const plus = function (){
-  quantity.value++;
+  if(!exists(cartItem.id)){ cartStore.cart.push(cartItem); }
+  else {
+    const currentItem = cartStore.cart.find(cartItem => cartItem.id === props.data.id);
+    currentItem.quantity += quantity.value;
+    currentItem.total = currentItem.price * currentItem.quantity;
+  }
+  buttonText.value = 'ITEM ADDED';
 }
-
-//let data = ref(null);
-const route = useRoute()
-const loadedData = ref(null);
-
-const {isFetching, data} = useFetch('http://localhost:3000/product/'+route.params.id).json()
-watch(data,(newData) => {
-  loadedData.value = newData;
-})
 
 </script>
 
 <template>
 
-  <div v-if="!loadedData"> Loading... </div>
-  <div v-else class="productCard">
+  <div class="productCard">
     <div class="line"></div>
-    <div class="price">$ {{loadedData.price}}</div>
-    <div class="description">{{loadedData.description}}</div>
+    <div class="price">$ {{data.price}}</div>
+    <div class="description">{{data.description}}</div>
     <div class="quantity">QUANTITY</div>
     <div class="quantityWrap">
       <input type="number" :value="quantity" readonly="readonly"/>
@@ -41,7 +48,7 @@ watch(data,(newData) => {
         <div>+</div>
       </div>
     </div>
-    <div class="button">ADD TO CART</div>
+    <div class="button" @click="addCartItem()">{{buttonText}}</div>
   </div>
 </template>
 
@@ -115,6 +122,7 @@ input::-webkit-inner-spin-button {
   width: 13vw;
   display: flex;
   justify-content: space-between;
+
 }
 
 .button{
