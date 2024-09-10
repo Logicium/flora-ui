@@ -58,17 +58,6 @@ const calcTotal = function (){
   margin-top: 1.5vw;
 }
 
-.top{
-  margin-top: auto;
-}
-
-.bottom{
-  margin-top: auto;
-  height: 1px;
-  background-color: #b6b6b6;
-  margin-bottom: 1.5vw;
-}
-
 .empty{
   height:16vw;
   margin-left: 1.5vw;

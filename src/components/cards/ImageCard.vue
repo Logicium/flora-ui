@@ -6,7 +6,7 @@
     image:  { type: String, default: ''},
     title:  { type: String, default: '' },
     price: { type: String, default: '' },
-    id: { type: String, default: '00' },
+    id: { type: String, default: '1' },
   })
   const imageUrl = computed(()=> 'url("'+props.image+'")').value;
   const id = props.id;

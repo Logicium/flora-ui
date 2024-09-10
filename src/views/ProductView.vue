@@ -6,6 +6,7 @@ import ImageCard from "@/components/cards/ImageCard.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
 import SocialCard from "@/components/cards/SocialCard.vue";
+import ProductCard from "@/components/cards/ProductCard.vue";
 
 const props = defineProps({
   image:  { type: String, default: '/src/assets/images/flower7.jpg'},
@@ -19,7 +20,7 @@ const imageUrl = computed(()=> 'url("'+props.image+'")').value;
 <template>
   <div class="grid">
     <div class="nameWrap"><ImageCard :image=image :title=title /></div>
-    <div class="priceWrap"><InfoCard/></div>
+    <div class="priceWrap"><ProductCard/></div>
     <NumberCard class="box" number="01" title="SUGGESTED"/>
     <InfoCard class="box"/>
     <InfoCard class="box"/>

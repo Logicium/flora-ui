@@ -125,15 +125,14 @@ input{
   animation:fade 0.5s forwards;
 }
 
-.quantity{
-  justify-content: space-evenly;
-  display: flex;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+.quantity{
+  justify-content: space-evenly;
+  display: flex;
+}
 
 </style>
