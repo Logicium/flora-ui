@@ -14,7 +14,7 @@ const route = function (route:string){
     <div class="content">
       <div class="text" @click="route('/blog')">blog</div>
       <div class="text" @click="route('/faqs')">faqs</div>
-      <div class="text">orders</div>
+      <div class="text" @click="route('/orders')">orders</div>
       <div class="text" @click="route('/contact')">contact</div>
     </div>
   </div>

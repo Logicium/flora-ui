@@ -23,7 +23,7 @@ const route = function (route:string){
         <div class="text" @click="route('/blog')">B L O G</div>
         <div class="text" @click="route('/about')">A B O U T</div>
         <div class="text" @click="route('/contact')">C O N T A C T</div>
-        <div class="icon"><SearchIcon></SearchIcon></div>
+        <div class="icon" @click="route('/search')"><SearchIcon></SearchIcon></div>
         <div class="icon" @click="route('/cart')">
           <div v-if="cartStore.cart.length>0" class="indicator"/>
           <ShopIcon/>
