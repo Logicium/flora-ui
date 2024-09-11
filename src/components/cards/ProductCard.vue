@@ -28,7 +28,7 @@ const addCartItem = function(){
     currentItem.total = currentItem.price * currentItem.quantity;
   }
   buttonText.value = 'ITEM ADDED';
-  setTimeout(() => buttonText.value = "ADD TO CART", 1500);
+  setTimeout(() => buttonText.value = "ADD TO CART", 1000);
 }
 
 </script>

@@ -60,11 +60,6 @@ const router = createRouter({
       component: () => import('../views/user/OrdersView.vue')
     },
     {
-      path: '/prefs',
-      name: 'prefs',
-      component: () => import('../views/user/PrefsView.vue')
-    },
-    {
       path: '/search',
       name: 'search',
       component: () => import('../views/SearchView.vue')

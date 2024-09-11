@@ -23,12 +23,11 @@ const route = function (route:string){
         <div class="text" @click="route('/blog')">B L O G</div>
         <div class="text" @click="route('/about')">A B O U T</div>
         <div class="text" @click="route('/contact')">C O N T A C T</div>
-        <div class="icon" @click="route('/search')"><SearchIcon></SearchIcon></div>
+        <div class="icon" @click="route('/search')"><SearchIcon/></div>
         <div class="icon" @click="route('/cart')">
-          <div v-if="cartStore.cart.length>0" class="indicator"/>
-          <ShopIcon/>
+          <div v-if="cartStore.cart.length>0" class="indicator"/><ShopIcon/>
         </div>
-        <div class="icon" @click="route('/account')"><UserIcon></UserIcon></div>
+        <div class="icon" @click="route('/account')"><UserIcon/></div>
       </div>
     </div>
   </div>
@@ -42,6 +41,7 @@ const route = function (route:string){
   left:0;
   width: 100%;
   background-color: white;
+  z-index: 10;
 }
 
 .text{
@@ -78,6 +78,7 @@ const route = function (route:string){
 }
 
 .navbar{
+  position: relative;
   display: flex;
   align-items: center;
   width: 76vw;

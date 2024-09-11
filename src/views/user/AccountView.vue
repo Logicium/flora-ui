@@ -6,6 +6,7 @@ import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
 import AddressCard from "@/components/cards/AddressCard.vue";
 import router from "@/router";
+import PrefsCard from "@/components/cards/PrefsCard.vue";
 
 const route = function (route:string){
   router.push(route);
@@ -20,7 +21,8 @@ const route = function (route:string){
     <div class="box billing"><AddressCard title="BILLING INFO"/></div>
     <InfoCard class="box click" @click="route('/orders')" title="YOUR ORDERS"/>
     <NumberCard class="box" title="# OF ORDERS" number="03"/>
-    <InfoCard class="box click" @click="route('/prefs')" title="CONTACT PREFERENCES"/>
+    <PrefsCard class="box"/>
+<!--    <InfoCard class="box click" title="CONTACT PREFERENCES"/>-->
     <InfoCard class="box click" @click="route('/logout')" title="LOGOUT"/>
     <Footer/>
   </div>
