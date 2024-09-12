@@ -7,22 +7,38 @@ import Footer from "@/components/Footer.vue";
 import Section1 from "../components/Section1.vue";
 import ContactCard from "@/components/cards/ContactCard.vue";
 import SocialCard from "@/components/cards/SocialCard.vue";
+import {useRoute} from "vue-router";
+import {ref, watch} from "vue";
+import {useFetch} from "@vueuse/core";
+import ProductImageCard from "@/components/cards/ProductImageCard.vue";
+import {useProductStore} from "@/stores/ProductStore";
+
+const productStore = useProductStore();
+
+// const loadedData = ref(null);
+// const {isFetching, data} = useFetch('http://localhost:3000/product').json()
+// watch(data,(newData) => {loadedData.value = newData;})
+//watch(productStore.products,((newData) => {loadedData2.value = newData;} ))
+
+
 </script>
 
 <template>
-
-  <div class="grid">
-    <div class="banner"><Section1></Section1></div>
-    <ImageCard class="box big" image="/src/assets/images/flower5.jpg" title="SAGE" price="$6"></ImageCard>
+<!--  <div v-if="!loadedData">Loading...</div>-->
+<!--  <div v-else class="grid">-->
+  <div v-if="!productStore.products">Loading... </div>
+  <div v-else class="grid">
+    <div class="banner"><Section1/></div>
     <div class="box"><NumberCard number="01" title='FLOWER CARDS'></NumberCard></div>
-    <ImageCard class="box big2" image="/src/assets/images/flower7.jpg" title="LAVENDER" price="$3"></ImageCard>
-    <ImageCard class="box" image="/src/assets/images/flower4.jpg" title="LAVENDER" price="$6"></ImageCard>
-    <ImageCard class="box" image="/src/assets/images/flower5.jpg" title="DESERT ROSE" price="$6"></ImageCard>
-    <ImageCard class="box" image="/src/assets/images/flower6.jpg" title="BORAGE" price="$6"></ImageCard>
-    <ImageCard class="box" image="/src/assets/images/flower7.jpg" title="JADEA" price="$3"></ImageCard>
+    <ProductImageCard class="box big" :data="productStore.products[0]"/>
+    <ProductImageCard class="box big2" :data="productStore.products[1]"/>
+    <ProductImageCard class="box" :data="productStore.products[2]"/>
+    <ProductImageCard class="box" :data="productStore.products[3]"/>
+    <ProductImageCard class="box" :data="productStore.products[4]"/>
+    <ProductImageCard class="box" :data="productStore.products[5]"/>
     <div class="box"><NumberCard number="02" title='FLOWER SEEDS'></NumberCard></div>
-    <ImageCard class="box" image="/src/assets/images/flower4.jpg" title="HONEYSTALK" price="$3"></ImageCard>
-    <ImageCard class="box" image="/src/assets/images/flower6.jpg" title="WILDFLOWER" price="$3"></ImageCard>
+    <ProductImageCard class="box" :data="productStore.products[6]"/>
+    <ProductImageCard class="box" :data="productStore.products[7]"/>
     <InfoCard class="box" title="LOCATION" info="PO.256, Trinidad, CO 81082, United States"></InfoCard>
     <InfoCard class="box" title="EMAIL" info="sales@florashop.com"></InfoCard>
     <InfoCard class="box" title="PHONE" info="+1 720.000.0271"></InfoCard>

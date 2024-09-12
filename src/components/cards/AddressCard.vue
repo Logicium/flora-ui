@@ -18,6 +18,7 @@ const firstName = ref('');
       <input placeholder="last name">
       <input placeholder="address 1">
       <input placeholder="address 2">
+      <input placeholder="city">
       <input placeholder="zipcode">
       <input placeholder="state" list="states"/>
       <datalist id="states">

@@ -9,7 +9,7 @@ import Footer from "@/components/Footer.vue";
 
   <div class="grid">
     <div class="imageWrap">
-      <BannerCard title="FAQS" image="/src/assets/images/flower7.jpg"/>
+      <BannerCard title="FAQS" image="/src/assets/images/flower10.jpg"/>
     </div>
     <div class="faqs1 box"><InfoCard/></div>
     <div class="faqs2 box"><InfoCard/></div>

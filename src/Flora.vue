@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
-import Section1 from "./components/Section1.vue";
+import {useProductStore} from "@/stores/ProductStore";
+
+const productStore = useProductStore();
+productStore.fill();
+
 </script>
 
 <template>
