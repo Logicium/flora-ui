@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import {useProductStore} from "@/stores/ProductStore";
+import Footer from "@/components/Footer.vue";
 
 const productStore = useProductStore();
 productStore.fill();

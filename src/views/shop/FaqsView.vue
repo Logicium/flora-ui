@@ -3,16 +3,19 @@
 import BannerCard from "@/components/cards/BannerCard.vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
+import data from "@/data/data";
+import FaqCard from "@/components/cards/FaqCard.vue";
+
 </script>
 
 <template>
 
   <div class="grid">
     <div class="imageWrap">
-      <BannerCard title="FAQS" image="/src/assets/images/flower10.jpg"/>
+      <BannerCard title="FAQS" image="/src/assets/images/flower11.jpg"/>
     </div>
-    <div class="faqs1 box"><InfoCard/></div>
-    <div class="faqs2 box"><InfoCard/></div>
+    <div class="faqs1 box"><FaqCard title="GENERAL QUESTIONS" :data="data.faq.generalQs"/></div>
+    <div class="faqs2 box"><FaqCard title="ORDERS & RETURNS" :data="data.faq.orderQs"/></div>
     <Footer></Footer>
   </div>
 

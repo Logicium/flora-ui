@@ -1,31 +1,39 @@
 <script setup lang="ts">
 defineProps({
-  title:  { type: String, default: '' },
-  info: { type: Object, default: ()=>{}},
+  title:  { type: String },
+  data: { type: Array },
 })
 </script>
 
 <template>
-  <div class="paragraphCard">
+  <div class="faqCard">
     <div class="line"></div>
     <div class="title">{{title}}</div>
-    <div class="paraWrap">
-      <div class="paragraph">{{info.intro}}</div>
-      <div class="paragraph">{{info.symbolism}}</div>
-      <div class="paragraph">{{info.invitation}}</div>
+    <div class="qaWrap">
+      <div v-for="qa in data" class="qa">
+        <div class="question">{{qa.question.toUpperCase()}}</div>
+        <div class="answer">{{qa.answer}}</div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
 
-.paragraphCard{
+.faqCard{
   background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
   font-weight: 500;
   width: 100%;
   height: 100%;
+}
+
+.answer{
+  margin-top: 0.8vw;
+  font-size: 1vw;
+  font-weight: 400;
+  line-height: 1.5vw;
 }
 
 .title {
@@ -44,16 +52,18 @@ defineProps({
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-bottom: 1.5vw;
-  font-weight: 400;
   line-height: 2vw;
 }
 
-.paraWrap{
+.qaWrap{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
   text-align: justify;
+  margin-left: 1.5vw;
+  margin-bottom: 1.5vw;
+  margin-right: 1.5vw;
 }
 
 

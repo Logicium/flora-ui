@@ -16,7 +16,7 @@ import SocialCard from "@/components/cards/SocialCard.vue";
   <div class="infoWrap">
     <ContactCard/>
   </div>
-  <InfoCard class="box" title="LOCATION" info="PO.256, Trinidad, CO, USA"></InfoCard>
+  <InfoCard class="box" title="LOCATION" info="PO.256, Trinidad, CO 81082, United States"></InfoCard>
   <InfoCard class="box" title="EMAIL" info="sales@florashop.com"></InfoCard>
   <InfoCard class="box" title="PHONE" info="+1 720.000.0271"></InfoCard>
   <SocialCard class="box" title="SOCIAL"></SocialCard>

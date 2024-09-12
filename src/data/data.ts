@@ -5,6 +5,44 @@ const data = {
         symbolism: "Each pressed flower tells a unique story, adding a special meaning to every card. A vibrant rose may symbolize love and passion, while a delicate daisy can represent innocence and purity. The symbolism of each flower is carefully considered to enhance the message you wish to convey.",
         invitation: "Whether you're sending a birthday greeting, expressing gratitude, or sharing a token of affection, our handmade creations offer a touch of natural elegance and warmth. We invite you to explore our collection and discover the perfect card to convey your message."
     },
+    faq:{
+        generalQs:[
+            {
+                question:'Can I request a custom card?',
+                answer:'Yes, we offer custom card services to meet your specific needs. Please contact us to discuss your requirements.'
+            },
+            {
+                question:'Where do you source your flowers?',
+                answer:'We source our flowers locally in Trinidad, Colorado, ensuring freshness and supporting local growers.'
+            },
+            {
+                question:'How should I care for my pressed flower card?',
+                answer:'Pressed flowers can last for many years if handled with care. Keep your card out of direct sunlight and excessive humidity. Avoid touching the flowers directly to prevent damage.'
+            },
+            {
+                question:'How long does it take to create a card?',
+                answer:'The time it takes to create a card varies depending on the complexity of the design and the specific flowers used. However, we strive to process orders within 14 days.'
+            }
+        ],
+        orderQs:[
+            {
+                question:'How do I place an order?',
+                answer:'You can place an order through our website or by contacting us directly.'
+            },
+            {
+                question:'What are your shipping options?',
+                answer:'We offer UPS Ground and USPS First Class Mail. Shipping times may vary depending on your location and the availability of products. '
+            },
+            {
+                question:'Can I exchange a card?',
+                answer:'Yes, you can exchange a card for a different design or size. Please contact us within 30 days of receiving your order.'
+            },
+            {
+                question:'What is your return policy?',
+                answer:'We offer a 30-day return policy for all purchases made on our website. If you are not satisfied with your purchase, you may return it for a full refund within 30 days of the purchase date.'
+            }
+        ]
+    },
     cart: [
         {
             productId:'1',
