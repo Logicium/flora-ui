@@ -2,27 +2,44 @@
 
 import {ref} from "vue";
 
-const fullname = ref('');
+const name = ref('');
 const email = ref('');
 const subject = ref('');
 const message = ref('');
-const checkForm = function (){
+const buttonText = ref('SEND MESSAGE');
+const checkForm = function (e:any){
+  //e.preventDefault();
+}
+
+const onSubmit = function (e:any){
+  const form = e.target;
+  const formData = new FormData(form);
+  const entries = Object.fromEntries(formData.entries())
+  const entries2 = new URLSearchParams(formData);
+  console.log(entries2);
+  fetch(form.action, {
+    method: form.method,
+    body: JSON.stringify(entries),
+    headers: { "Content-Type": "application/json" }
+  })
+  buttonText.value = 'MESSAGE SENT';
+  setTimeout(() => buttonText.value = "SEND MESSAGE", 1000);
 
 }
 
 </script>
 
 <template>
-  <form class="contactCard" id="contact"  @submit="checkForm" action="http://localhost:3000/contact" method="post">
-    <div class="line"></div>
+  <form class="contactCard" id="contact"  @submit.prevent="onSubmit" action="http://localhost:3000/email/contact" method="post">
+    <div class="line"/>
     <div class="title">CONTACT US</div>
     <div class="inputWrap">
-      <input class="text" type="text" placeholder="your name" v-model="fullname">
-      <input class="text" type="email" placeholder="your email" v-model="email">
-      <input class="text" type="text" placeholder="subject" v-model="subject">
-      <textarea class="message" type="text" placeholder="message" v-model="message"/>
+      <input class="text" type="text" name="name" placeholder="your name" v-model="name"/>
+      <input class="text" type="email" name="email" placeholder="your email" v-model="email"/>
+      <input class="text" type="text" name="subject" placeholder="subject" v-model="subject"/>
+      <textarea class="message" type="text" name="message" placeholder="message" v-model="message"/>
     </div>
-    <input type="submit" class="button" value="SEND MESSAGE"/>
+    <input type="submit" class="button" :value="buttonText"/>
   </form>
 </template>
 

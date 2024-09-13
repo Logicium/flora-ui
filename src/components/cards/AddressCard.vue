@@ -44,10 +44,10 @@ const firstName = ref('');
 input{
   margin-left: 1.5vw;
   margin-right: 1.5vw;
-  font-family: "Barlow",sans-serif;
   font-size: 1vw;
   background-color: #f1f1f1;
   border: none;
+  font-family: "Barlow",sans-serif;
   border-bottom: #b6b6b6 solid 2px;
   flex: 1;
 }

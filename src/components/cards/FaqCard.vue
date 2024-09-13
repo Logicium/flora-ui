@@ -27,6 +27,7 @@ defineProps({
   font-weight: 500;
   width: 100%;
   height: 100%;
+  font-size: 1.2vw;
 }
 
 .answer{

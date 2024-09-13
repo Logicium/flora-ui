@@ -3,13 +3,15 @@
 import ImageCard from "@/components/cards/ImageCard.vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
+import LoginCard from "@/components/cards/LoginCard.vue";
+import SignupCard from "@/components/cards/SignupCard.vue";
 </script>
 
 <template>
   <div class="grid">
     <div class="box login"><ImageCard title="LOG IN" image="/src/assets/images/flower10.jpg"/></div>
-    <div class="box loginForm"><InfoCard/></div>
-    <div class="box signupForm"><InfoCard/></div>
+    <div class="box loginForm"><LoginCard/></div>
+    <div class="box signupForm"><SignupCard/></div>
     <div class="box signup"><ImageCard title="SIGN UP" image="/src/assets/images/flower12.jpg"/></div>
     <Footer/>
   </div>
