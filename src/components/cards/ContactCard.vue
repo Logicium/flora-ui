@@ -15,8 +15,6 @@ const onSubmit = function (e:any){
   const form = e.target;
   const formData = new FormData(form);
   const entries = Object.fromEntries(formData.entries())
-  const entries2 = new URLSearchParams(formData);
-  console.log(entries2);
   fetch(form.action, {
     method: form.method,
     body: JSON.stringify(entries),
@@ -24,7 +22,6 @@ const onSubmit = function (e:any){
   })
   buttonText.value = 'MESSAGE SENT';
   setTimeout(() => buttonText.value = "SEND MESSAGE", 1000);
-
 }
 
 </script>

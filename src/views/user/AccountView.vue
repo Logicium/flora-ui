@@ -7,15 +7,24 @@ import Footer from "@/components/Footer.vue";
 import AddressCard from "@/components/cards/AddressCard.vue";
 import router from "@/router";
 import PrefsCard from "@/components/cards/PrefsCard.vue";
+import {useAccountStore} from "@/stores/AccountStore";
+import LoginView from "@/views/user/LoginView.vue";
+import {ref, watch} from "vue";
+import {useFetch} from "@vueuse/core";
+import {useAuthStore} from "@/stores/AuthStore";
+
+const authStore = useAuthStore();
+const accountStore = useAccountStore();
 
 const route = function (route:string){
   router.push(route);
 }
 
+
 </script>
 
 <template>
-  <div class="grid">
+  <div v-if="authStore.token" class="grid">
     <div class="box title"><ImageCard title="ACCOUNT" image="/src/assets/images/flower10.jpg"/></div>
     <div class="box shipping"><AddressCard title="SHIPPING INFO"/></div>
     <div class="box billing"><AddressCard title="BILLING INFO"/></div>
@@ -26,6 +35,9 @@ const route = function (route:string){
     <InfoCard class="box click" @click="route('/logout')" title="LOGOUT"/>
     <Footer/>
   </div>
+  <template v-else>
+    {{router.push('/login')}}
+  </template>
 </template>
 
 <style scoped>
