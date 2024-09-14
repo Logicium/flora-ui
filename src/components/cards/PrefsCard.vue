@@ -8,6 +8,13 @@ const togglePref = function (){
   show.value = !show.value;
 }
 
+const buttonText = ref('SAVE CHANGES');
+
+const submit = function (){
+  buttonText.value = 'CHANGES SAVED'
+  setTimeout(() => buttonText.value = "SAVE CHANGES", 2000);
+}
+
 </script>
 
 <template>
@@ -26,7 +33,7 @@ const togglePref = function (){
           <input type="checkbox">
         </div>
         <input type="text" placeholder="email">
-        <div class="button">SAVE CHANGES</div>
+        <div class="button" @click="submit">{{ buttonText }}</div>
       </div>
     </transition>
   </div>
@@ -81,7 +88,6 @@ input{
   height: 100%;
   width: 100%;
 }
-
 .title {
   font-size: 1.2vw;
   text-align: left;
@@ -133,6 +139,5 @@ input{
 .slide-leave-from {
   transform: translateX(0%);
 }
-
 
 </style>

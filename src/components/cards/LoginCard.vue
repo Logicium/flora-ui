@@ -22,9 +22,8 @@ const onSubmit = function (e:any){
       setTimeout(() => buttonText.value = "LOG IN", 2000);
     } else {
       const json = await response.json();
-      console.log(json);
       authStore.token = json.token;
-      accountStore.fill(json.token);
+      await accountStore.fill(json.token);
       await router.push({ name: 'account' });
     }
   })

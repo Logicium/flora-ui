@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Flora from '../Flora.vue'
 import HomeView from "../views/HomeView.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -69,7 +70,8 @@ const router = createRouter({
       name: 'product',
       props: true,
       component: () => import('../views/shop/ProductView.vue')
-    }
+    },
+    { path: '/:pathMatch(.*)*', component: NotFound }
   ]
 })
 

@@ -9,10 +9,14 @@
       <input placeholder="email" type="email">
       <input placeholder="password" type="password">
       <input placeholder="reenter password" type="password">
-      <div class="alertsWrap">
-        <div class="alert">EMAIL ALERTS</div>
-        <input type="checkbox">
-      </div>
+    </div>
+    <div class="alertsWrap">
+      <div class="alert">EMAIL ALERTS</div>
+      <input type="checkbox">
+    </div>
+    <div class="termsWrap">
+      <div class="terms">TERMS OF SERVICE AGREEMENT</div>
+      <input type="checkbox">
     </div>
     <div class="buttonWrap"><div class="button">SIGN UP</div></div>
   </form>
@@ -34,13 +38,23 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: auto;
+}
+.termsWrap{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
 }
 .alert{
   margin-left: 1.5vw;
   margin-top: 1.5vw;
 }
-.alertsWrap input{
+
+.terms{
+  margin-left: 1.5vw;
   margin-top: 1.5vw;
+  cursor: pointer;
 }
 
 .inputWrap{
@@ -75,7 +89,6 @@ input{
 
 .buttonWrap{
   margin-bottom: 1.5vw;
-  margin-top: auto;
 }
 
 input:focus,

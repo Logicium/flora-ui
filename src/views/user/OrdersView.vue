@@ -1,11 +1,13 @@
 <script setup lang="ts">
-
+import {useAuthStore} from "@/stores/AuthStore";
 import Footer from "@/components/Footer.vue";
+import router from "../../router";
+const authStore = useAuthStore();
 </script>
 
 <template>
 
-  <div class="grid">
+  <div v-if="authStore.token" class="grid">
     <div class="orders">
       <div class="line"></div>
       <div class="title">YOUR ORDERS</div>
@@ -19,6 +21,9 @@ import Footer from "@/components/Footer.vue";
     </div>
     <Footer/>
   </div>
+  <template v-else>
+    {{router.push('/login')}}
+  </template>
 
 </template>
 
