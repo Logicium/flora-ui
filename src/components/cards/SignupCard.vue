@@ -1,14 +1,43 @@
 <script setup lang="ts">
 
+import {ref} from "vue";
+import router from "@/router";
+import {useAccountStore} from "@/stores/AccountStore";
+import {useAuthStore} from "@/stores/AuthStore";
+
+const accountStore = useAccountStore();
+const authStore = useAuthStore();
+const buttonText = ref('LOG IN');
+const onSubmit = function (e:any){
+  const form = e.target;
+  const formData = new FormData(form);
+  const entries = Object.fromEntries(formData.entries())
+  fetch(form.action, {
+    method: form.method,
+    body: JSON.stringify(entries),
+    headers: { "Content-Type": "application/json" }
+  }).then(async response => {
+    if (response.status != 201) {
+      buttonText.value = 'INVALID INPUT';
+      setTimeout(() => buttonText.value = "SIGN UP", 2000);
+    } else {
+      const json = await response.json();
+      authStore.token = json.token;
+      await accountStore.fill(json.token);
+      await router.push({ name: 'account' });
+    }
+  })
+}
+
 </script>
 
 <template>
-  <form class="signupCard">
+  <form class="signupCard" id="login" @submit.prevent="onSubmit" action="http://localhost:3000/auth/signup" method="post">
     <div class="line"/>
     <div class="inputWrap">
-      <input placeholder="email" type="email">
-      <input placeholder="password" type="password">
-      <input placeholder="reenter password" type="password">
+      <input name="email" placeholder="email" type="email">
+      <input name="password" placeholder="password" type="password">
+      <input name="password2" placeholder="password check" type="password">
     </div>
     <div class="alertsWrap">
       <div class="alert">EMAIL ALERTS</div>
@@ -18,7 +47,7 @@
       <div class="terms">TERMS OF SERVICE AGREEMENT</div>
       <input type="checkbox">
     </div>
-    <div class="buttonWrap"><div class="button">SIGN UP</div></div>
+    <div class="buttonWrap"><button class="button">SIGN UP</button></div>
   </form>
 </template>
 
@@ -62,7 +91,7 @@
   flex-direction: column;
 }
 
-input{
+input:not([type="submit"]){
   margin-top: 1.5vw;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
@@ -75,6 +104,7 @@ input{
 
 .button{
   background-color: black;
+  font-family: "Barlow",sans-serif;
   color: #f1f1f1;
   text-align: center;
   width: 13vw;
@@ -91,11 +121,10 @@ input{
   margin-bottom: 1.5vw;
 }
 
-input:focus,
-textarea:focus{
+input:not([type="submit"]):focus{
   animation: inputFocus 0.5s forwards;
 }
-input:not(:focus),textarea:not(:focus){
+input:not([type="submit"]):not(:focus){
   animation: inputDefocus 0.5s forwards;
 }
 
