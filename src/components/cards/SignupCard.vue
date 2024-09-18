@@ -32,12 +32,12 @@ const onSubmit = function (e:any){
 </script>
 
 <template>
-  <form class="signupCard" id="login" @submit.prevent="onSubmit" action="http://localhost:3000/auth/signup" method="post">
+  <form class="signupCard" id="signup" @submit.prevent="onSubmit" action="http://localhost:3000/auth/signup" method="post">
     <div class="line"/>
     <div class="inputWrap">
       <input name="email" placeholder="email" type="email">
       <input name="password" placeholder="password" type="password">
-      <input name="password2" placeholder="password check" type="password">
+      <input name="password2" placeholder="password" type="password">
     </div>
     <div class="alertsWrap">
       <div class="alert">EMAIL ALERTS</div>

@@ -8,7 +8,7 @@ import router from './router'
 
 const app = createApp(Flora)
 const pinia = createPinia();
-
+app.config.devtools = false;
 app.use(pinia)
 app.use(router)
 app.mount('#app')

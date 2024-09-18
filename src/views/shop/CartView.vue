@@ -6,6 +6,7 @@ import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
 import CartCard from "@/components/cards/CartCard.vue";
 import {useCartStore} from "@/stores/CartStore";
+import router from "@/router";
 
 const cartStore = useCartStore();
 
@@ -38,7 +39,7 @@ const calcTotal = function (){
         <div class="finaltotal1">TOTAL</div>
         <div class="finaltotal2">${{calcTotal()}}</div>
       </div>
-      <div class="button" v-if="calcTotal()>0">CHECKOUT</div>
+      <div class="button" v-if="calcTotal()>0" @click="router.push('/checkout')">CHECKOUT</div>
     </div>
     <NumberCard class="box" number="01" title="SUGGESTED"/>
     <InfoCard class="box"/>

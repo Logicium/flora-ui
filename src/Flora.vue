@@ -30,8 +30,6 @@ productStore.fill();
 .row{
   display: flex;
   width: 80vw;
-  margin: 4vw 0;
-  aspect-ratio: 2/1;
 }
 
 </style>
