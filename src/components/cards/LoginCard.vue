@@ -24,7 +24,7 @@ const onSubmit = function (e:any){
       const json = await response.json();
       authStore.token = json.token;
       await accountStore.fill(json.token);
-      await router.push({ name: 'account' });
+      await router.push('/account');
     }
   })
 }

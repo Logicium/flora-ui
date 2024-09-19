@@ -2,7 +2,16 @@
 import {useAuthStore} from "@/stores/AuthStore";
 import Footer from "@/components/Footer.vue";
 import router from "../../router";
+import {useAccountStore} from "@/stores/AccountStore";
+import OrderCard from "@/components/cards/OrderCard.vue";
 const authStore = useAuthStore();
+const accountStore = useAccountStore();
+console.log(accountStore.user);
+const init = async function (){
+  if(authStore.token) await accountStore.fill(authStore.token);
+}
+init();
+
 </script>
 
 <template>
@@ -18,6 +27,10 @@ const authStore = useAuthStore();
         <div class="total">TOTAL</div>
       </div>
       <div class="divider"></div>
+      <div v-if="!accountStore.user.orders">NO ORDERS</div>
+      <template v-else>
+        <OrderCard v-for="order in accountStore.user.orders" :data="order"/>
+      </template>
     </div>
     <Footer/>
   </div>
@@ -32,7 +45,7 @@ const authStore = useAuthStore();
 .orders{
   grid-row: 1/3;
   grid-column: 1/5;
-  height: 36vw;
+  height: auto;
   background-color: #f1f1f1;
   font-weight: 500;
   font-size: 1.2vw;

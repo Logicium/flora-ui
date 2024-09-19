@@ -17,6 +17,8 @@ async function initialize() {
   const fetchClientSecret = async () => {
     const response = await fetch("http://localhost:3000/order/create-checkout-session", {
       method: "POST",
+      body: JSON.stringify(cartStore.cart),
+      headers: { "Content-Type": "application/json" }
     });
     const { clientSecret } = await response.json();
     return clientSecret;

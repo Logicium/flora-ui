@@ -15,7 +15,18 @@ import {useAuthStore} from "@/stores/AuthStore";
 
 const authStore = useAuthStore();
 const accountStore = useAccountStore();
+const orderCount = ref(0);
 
+console.log(accountStore.user);
+console.log(authStore.token);
+
+const init = async function (){
+  if(authStore.token) {
+    await accountStore.fill(authStore.token);
+    orderCount.value = accountStore.user.orders.length;
+  }
+}
+init();
 const route = function (route:string){
   router.push(route);
 }
@@ -29,7 +40,7 @@ const route = function (route:string){
     <div class="box shipping"><AddressCard title="SHIPPING INFO"/></div>
     <div class="box billing"><AddressCard title="BILLING INFO"/></div>
     <InfoCard class="box click" @click="route('/orders')" title="YOUR ORDERS"/>
-    <NumberCard class="box" title="# OF ORDERS" number="03"/>
+    <NumberCard class="box" title="# OF ORDERS" :number="'0'+orderCount"/>
     <PrefsCard class="box"/>
 <!--    <InfoCard class="box click" title="CONTACT PREFERENCES"/>-->
     <InfoCard class="box click" @click="route('/logout')" title="LOGOUT"/>

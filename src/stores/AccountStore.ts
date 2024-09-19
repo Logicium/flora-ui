@@ -1,10 +1,10 @@
 import {defineStore} from "pinia";
-import {createFetch, useFetch, useStorage} from "@vueuse/core";
+import {createFetch, useFetch, useLocalStorage, useStorage} from "@vueuse/core";
 export const useAccountStore = defineStore({
     id:"AccountStore",
     state:()=>{
         return {
-            user: useStorage('user',{token:null})
+            user: useStorage('user', {})
         };
     },
     actions:{
@@ -18,8 +18,12 @@ export const useAccountStore = defineStore({
                 }
             })
             const {isFetching,data} = await fetchUser('http://localhost:3000/auth/account').json();
-            this.user = (await data);
-            console.log(this.user);
+            return this.user = (await data);
+            //console.log(this.user);
         }
-    }
+    },
+    // hydrate(state, initialState) {
+    //     state.user = useStorage('user', {});
+    // },
+
 })
