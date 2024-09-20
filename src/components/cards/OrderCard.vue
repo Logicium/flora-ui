@@ -11,6 +11,15 @@ const getDate = function (){
   return new Date(props.data.createdOn).toLocaleString();
 }
 
+const getItems = function(){
+  let totalItems = 0;
+  for(const product of props.data.products){
+    console.log(product);
+    totalItems += product.quantity;
+  }
+  return totalItems;
+}
+
 </script>
 
 <template>

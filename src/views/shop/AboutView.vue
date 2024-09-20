@@ -23,7 +23,6 @@ import ParagraphCard from "@/components/cards/ParagraphCard.vue";
     <InfoCard class="box" title="ECO-FRIENDLY AND SUSTAINABLE MATERIALS"/>
     <InfoCard class="box" title="UNIQUE GIFTS THAT CAPTURE THE BEAUTY OF NATURE"/>
     <Footer/>
-
   </div>
 </template>
 

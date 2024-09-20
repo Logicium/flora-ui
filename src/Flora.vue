@@ -13,7 +13,18 @@ productStore.fill();
 <div class="webapp">
   <NavBar/>
   <div class="row">
-    <RouterView/>
+<!--    <transition name="fade">-->
+<!--      <RouterView/>-->
+<!--    </transition>-->
+
+    <RouterView v-slot="{ Component, route }" appear>
+      <transition name="fade" mode="out-in">
+        <div :key="route.name">
+          <component :is="Component"></component>
+        </div>
+      </transition>
+    </RouterView>
+
   </div>
 </div>
 </template>
@@ -27,6 +38,15 @@ productStore.fill();
   margin: 0 auto;
   margin-top: 6vw;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
 .row{
   display: flex;
   width: 80vw;
