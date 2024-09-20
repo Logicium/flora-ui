@@ -4,7 +4,7 @@ import SocialCard from "@/components/cards/SocialCard.vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
-import CartCard from "@/components/cards/CartCard.vue";
+import CartCard from "@/components/cards/shop/CartCard.vue";
 import {useCartStore} from "@/stores/CartStore";
 import router from "@/router";
 
@@ -29,7 +29,7 @@ const calcTotal = function (){
       </div>
       <div class="divider"></div>
       <div class="cartWrap">
-        <CartCard v-for="(cartItem,index) in cartStore.cart" :index="index" :data="cartItem"/>
+        <CartCard class="list-item" v-for="(cartItem,index) in cartStore.cart" :index="index" :data="cartItem"/>
         <div class="empty" v-if="calcTotal()==0">
           <div>CART IS EMPTY</div>
         </div>
@@ -77,10 +77,12 @@ const calcTotal = function (){
   width: 50%;
   text-align: right;
 }
-.product{
 
+.container {
+  position: relative;
+  padding: 0;
+  list-style-type: none;
 }
-
 .headers{
   display: flex;
   margin-left: 1.5vw;
@@ -138,6 +140,24 @@ const calcTotal = function (){
   font-size: 1.2vw;
   align-content: center;
   font-weight: 500;
+}
+
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+  position: absolute;
 }
 
 </style>

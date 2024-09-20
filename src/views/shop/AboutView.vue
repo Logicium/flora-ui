@@ -6,7 +6,7 @@ import Footer from "@/components/Footer.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import BannerCard from "@/components/cards/BannerCard.vue";
 import data from "@/data/data";
-import ParagraphCard from "@/components/cards/ParagraphCard.vue";
+import ParagraphCard from "@/components/cards/shop/ParagraphCard.vue";
 
 </script>
 

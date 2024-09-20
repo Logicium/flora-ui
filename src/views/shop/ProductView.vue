@@ -6,7 +6,7 @@ import ImageCard from "@/components/cards/ImageCard.vue";
 import NumberCard from "@/components/cards/NumberCard.vue";
 import Footer from "@/components/Footer.vue";
 import SocialCard from "@/components/cards/SocialCard.vue";
-import ProductCard from "@/components/cards/ProductCard.vue";
+import ProductCard from "@/components/cards/shop/ProductCard.vue";
 import {useRoute} from "vue-router";
 import {useFetch} from "@vueuse/core";
 

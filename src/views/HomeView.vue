@@ -10,7 +10,7 @@ import SocialCard from "@/components/cards/SocialCard.vue";
 import {useRoute} from "vue-router";
 import {ref, watch} from "vue";
 import {useFetch} from "@vueuse/core";
-import ProductImageCard from "@/components/cards/ProductImageCard.vue";
+import ProductImageCard from "@/components/cards/shop/ProductImageCard.vue";
 import {useProductStore} from "@/stores/ProductStore";
 
 const productStore = useProductStore();

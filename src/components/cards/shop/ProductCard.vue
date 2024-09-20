@@ -11,7 +11,8 @@ const minus = function (){ if (quantity.value > 1) quantity.value--; }
 const plus = function (){ quantity.value++; }
 
 
-const buttonText = ref('ADD TO CART')
+const buttonText = ref('ADD TO CART');
+const toggleButton = ref(true);
 
 const exists = function (id:number){
   return cartStore.cart.some(cartItem => cartItem.id === id);
@@ -27,8 +28,8 @@ const addCartItem = function(){
     currentItem.quantity += quantity.value;
     currentItem.total = currentItem.price * currentItem.quantity;
   }
-  buttonText.value = 'ITEM ADDED';
-  setTimeout(() => buttonText.value = "ADD TO CART", 1000);
+  toggleButton.value = false;
+  setTimeout(() => toggleButton.value = true, 1500);
 }
 
 </script>
@@ -49,7 +50,13 @@ const addCartItem = function(){
         <div>+</div>
       </div>
     </div>
-    <div class="button" @click="addCartItem()">{{buttonText}}</div>
+<!--    <div class="button" @click="addCartItem()">{{buttonText}}</div>-->
+    <div class="buttonWrap">
+      <Transition name="slide-up">
+        <div v-if="toggleButton" class="button" @click="addCartItem()">ADD TO CART</div>
+        <div v-else class="button">ITEM ADDED</div>
+      </Transition>
+    </div>
   </div>
 </template>
 
@@ -130,19 +137,43 @@ input::-webkit-inner-spin-button {
 
 }
 
+.buttonWrap{
+  width: 13vw;
+  height: 3vw;
+  position: relative;
+  margin-top: 1.5vw;
+  margin-left: 1.5vw;
+  margin-bottom: 1.5vw;
+  overflow: hidden;
+}
+
 .button{
   background-color: black;
   color: #f1f1f1;
   text-align: center;
   width: 13vw;
   height: 3vw;
-  margin-top: 1.5vw;
-  margin-left: 1.5vw;
-  margin-bottom: 1.5vw;
+
   cursor: pointer;
   font-size: 1.2vw;
   align-content: center;
   font-weight: 500;
+  position: absolute;
+  z-index: 10;
 }
 
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-up-enter-from {
+  transform: translateY(3vw);
+  opacity: 0;
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-3vw);
+}
 </style>

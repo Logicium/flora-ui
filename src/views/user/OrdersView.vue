@@ -3,7 +3,7 @@ import {useAuthStore} from "@/stores/AuthStore";
 import Footer from "@/components/Footer.vue";
 import router from "../../router";
 import {useAccountStore} from "@/stores/AccountStore";
-import OrderCard from "@/components/cards/OrderCard.vue";
+import OrderCard from "@/components/cards/shop/OrderCard.vue";
 const authStore = useAuthStore();
 const accountStore = useAccountStore();
 console.log(accountStore.user);

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer.vue";
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
 import {ref, onMounted, watch} from "vue";
 import {loadStripe} from '@stripe/stripe-js';
-import CheckoutCard from "@/components/cards/CheckoutCard.vue";
+import CheckoutCard from "@/components/cards/shop/CheckoutCard.vue";
 import {useCartStore} from "@/stores/CartStore";
 import router from "@/router";
 

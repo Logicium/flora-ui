@@ -2,7 +2,7 @@
 
 import { ref } from 'vue'
 defineProps(['title'])
-import data from "../../data/data";
+import data from "../../../data/data";
 
 const firstName = ref('');
 

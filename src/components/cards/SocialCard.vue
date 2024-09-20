@@ -35,8 +35,9 @@ defineProps(['title'])
   justify-content: space-between;
   width: 50%;
   margin-top: auto;
+  margin-left: auto;
   margin-bottom: 1.5vw;
-  margin-left: 1.5vw;
+  margin-right: 1.5vw;
 }
 
 .icon{

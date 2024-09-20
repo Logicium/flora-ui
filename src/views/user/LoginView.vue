@@ -3,8 +3,8 @@
 import ImageCard from "@/components/cards/ImageCard.vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
-import LoginCard from "@/components/cards/LoginCard.vue";
-import SignupCard from "@/components/cards/SignupCard.vue";
+import LoginCard from "@/components/cards/user/LoginCard.vue";
+import SignupCard from "@/components/cards/user/SignupCard.vue";
 </script>
 
 <template>

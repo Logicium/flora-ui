@@ -4,7 +4,7 @@ import BannerCard from "@/components/cards/BannerCard.vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import Footer from "@/components/Footer.vue";
 import data from "@/data/data";
-import FaqCard from "@/components/cards/FaqCard.vue";
+import FaqCard from "@/components/cards/shop/FaqCard.vue";
 
 </script>
 

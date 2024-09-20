@@ -36,7 +36,7 @@ const imageUrl = computed(()=> 'url("'+props.data.image+'")').value;
 <template>
 
   <div class="cartCard">
-    <div class="image" @click="route(data.id)"></div>
+    <div class="image" @click="route(data.id)"/>
     <div class="product">{{data.name}}</div>
     <div class="price">${{data.price}}</div>
     <div class="quantity">
@@ -46,7 +46,7 @@ const imageUrl = computed(()=> 'url("'+props.data.image+'")').value;
     </div>
     <div class="total">${{ data.total }}</div>
   </div>
-  <div class="divider"></div>
+  <div class="divider"/>
 
 </template>
 
