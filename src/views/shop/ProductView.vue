@@ -9,6 +9,7 @@ import SocialCard from "@/components/cards/SocialCard.vue";
 import ProductCard from "@/components/cards/shop/ProductCard.vue";
 import {useRoute} from "vue-router";
 import {useFetch} from "@vueuse/core";
+import SuggestedCard from "@/components/cards/shop/SuggestedCard.vue";
 
 const route = useRoute()
 const loadedData = ref(null);
@@ -23,8 +24,8 @@ watch(data,(newData) => {loadedData.value = newData;})
     <div class="nameWrap"><ImageCard :image=loadedData.image :title=loadedData.name /></div>
     <div class="priceWrap"><ProductCard :data="loadedData"/></div>
     <NumberCard class="box" number="01" title="SUGGESTED"/>
-    <InfoCard class="box"/>
-    <InfoCard class="box"/>
+    <SuggestedCard class="box"/>
+    <SuggestedCard class="box"/>
     <SocialCard class="box" title="SHARE"/>
     <Footer/>
   </div>
