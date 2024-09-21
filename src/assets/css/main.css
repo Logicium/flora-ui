@@ -41,6 +41,15 @@ svg{
   margin-top: 1.5vw;
 }
 
+.divider{
+  height: 1px;
+  background-color: #b6b6b6;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  margin-top: 1.5vw;
+}
+
+
 input:focus,
 select:focus,
 textarea:focus,

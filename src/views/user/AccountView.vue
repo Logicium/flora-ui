@@ -41,8 +41,7 @@ const route = function (route:string){
     <div class="box billing"><AddressCard title="BILLING INFO"/></div>
     <InfoCard class="box click" @click="route('/orders')" title="YOUR ORDERS"/>
     <NumberCard class="box" title="# OF ORDERS" :number="'0'+orderCount"/>
-    <PrefsCard class="box"/>
-<!--    <InfoCard class="box click" title="CONTACT PREFERENCES"/>-->
+    <PrefsCard class="box" :data="accountStore"/>
     <InfoCard class="box click" @click="route('/logout')" title="LOGOUT"/>
     <Footer/>
   </div>

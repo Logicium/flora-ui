@@ -52,9 +52,9 @@ const addCartItem = function(){
     </div>
 <!--    <div class="button" @click="addCartItem()">{{buttonText}}</div>-->
     <div class="buttonWrap">
+      <div class="button" @click="addCartItem()">ADD TO CART</div>
       <Transition name="slide-up">
-        <div v-if="toggleButton" class="button" @click="addCartItem()">ADD TO CART</div>
-        <div v-else class="button">ITEM ADDED</div>
+        <div v-if="!toggleButton" class="button">ITEM ADDED</div>
       </Transition>
     </div>
   </div>

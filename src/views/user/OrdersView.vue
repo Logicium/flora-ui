@@ -49,6 +49,7 @@ init();
   background-color: #f1f1f1;
   font-weight: 500;
   font-size: 1.2vw;
+  padding-bottom: 3vw;
 }
 
 .title{
@@ -79,14 +80,6 @@ init();
 .total{
   width: 10%;
   text-align: right;
-}
-
-.divider{
-  height: 1px;
-  background-color: #b6b6b6;
-  margin-left: 1.5vw;
-  margin-right: 1.5vw;
-  margin-top: 1.5vw;
 }
 
 </style>

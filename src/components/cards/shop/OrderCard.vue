@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import {computed} from "vue";
+import router from "@/router";
 
 const props = defineProps({
   data: { type: Object, default: ()=>{}},
@@ -10,7 +11,6 @@ const imageUrl = computed(()=> 'url("'+props.data.products[0].image+'")').value;
 const getDate = function (){
   return new Date(props.data.createdOn).toLocaleString();
 }
-
 const getItems = function(){
   let totalItems = 0;
   for(const product of props.data.products){
@@ -24,7 +24,7 @@ const getItems = function(){
 
 <template>
   <div class="orderCard">
-    <div class="imageWrap"><div class="image"></div></div>
+    <div class="imageWrap"><div class="image" @click="router.push('/order/'+data.id)"></div></div>
     <div class="orderNum">ORDER #0{{data.id}}</div>
     <div class="status">{{data.status}}</div>
     <div class="date">{{getDate()}}</div>

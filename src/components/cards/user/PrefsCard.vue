@@ -2,7 +2,9 @@
 
 import {ref} from "vue";
 import BackIcon from "@/assets/icons/BackIcon.vue";
-
+const props = defineProps({
+  data: { type: Object, default: ()=>{}},
+})
 const show = ref(false);
 const togglePref = function (){
   show.value = !show.value;
@@ -30,9 +32,9 @@ const submit = function (){
         <div class="iconWrap click" @click="togglePref()"><BackIcon/></div>
         <div class="emailWrap">
           <div class="email">EMAIL ALERTS</div>
-          <input type="checkbox">
+          <input type="checkbox" v-model="data.user.emailAlerts">
         </div>
-        <input type="text" placeholder="email">
+        <input type="text" placeholder="email" v-model="data.user.email">
         <div class="button" @click="submit">{{ buttonText }}</div>
       </div>
     </transition>

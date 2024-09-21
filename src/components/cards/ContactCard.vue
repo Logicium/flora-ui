@@ -30,12 +30,10 @@ const onSubmit = function (e:any){
   <form class="contactCard" id="contact"  @submit.prevent="onSubmit" action="http://localhost:3000/email/contact" method="post">
     <div class="line"/>
     <div class="title">CONTACT US</div>
-    <div class="inputWrap">
-      <input class="text" type="text" name="name" placeholder="your name" v-model="name"/>
-      <input class="text" type="email" name="email" placeholder="your email" v-model="email"/>
-      <input class="text" type="text" name="subject" placeholder="subject" v-model="subject"/>
-      <textarea class="message" type="text" name="message" placeholder="message" v-model="message"/>
-    </div>
+    <input class="text" type="text" name="name" placeholder="your name" v-model="name"/>
+    <input class="text" type="email" name="email" placeholder="your email" v-model="email"/>
+    <input class="text" type="text" name="subject" placeholder="subject" v-model="subject"/>
+    <textarea class="message" type="text" name="message" placeholder="message" v-model="message"/>
     <input type="submit" class="button" :value="buttonText"/>
   </form>
 </template>
@@ -53,7 +51,7 @@ const onSubmit = function (e:any){
 .inputWrap{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
 }
 
 .message{
@@ -61,15 +59,17 @@ const onSubmit = function (e:any){
   flex: none;
   font-family: "Barlow",sans-serif;
   background-color: #f1f1f1;
+  margin-top: auto;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-bottom: 1.5vw;
+  font-size: 1vw;
   border: none;
   border-bottom: #b6b6b6 solid 2px;
   resize: none;
 }
 
-input.text,textarea{
+input.text{
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   margin-bottom: 1.5vw;
@@ -91,7 +91,6 @@ input.text,textarea{
   text-align: center;
   width: 13vw;
   height: 3vw;
-  margin-top: auto;
   margin-left: 1.5vw;
   margin-bottom: 1.5vw;
   font-family: "Barlow",sans-serif;
