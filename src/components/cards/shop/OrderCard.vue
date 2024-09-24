@@ -29,7 +29,7 @@ const getItems = function(){
     <div class="status">{{data.status}}</div>
     <div class="date">{{getDate()}}</div>
     <div class="items">{{data.products.length}}</div>
-    <div class="total">${{data.total / 100}}.00</div>
+    <div class="total">${{parseFloat(data.total / 100).toFixed(2)}}</div>
   </div>
   <div class="divider"></div>
 </template>

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import {useAuthStore} from "@/stores/AuthStore";
-import {ref, watch} from "vue";
+import {reactive, ref, watch} from "vue";
 import {createFetch, useFetch} from "@vueuse/core";
 import {useRoute} from "vue-router";
 import Footer from "@/components/Footer.vue";
 import InfoCard from "@/components/cards/InfoCard.vue";
 import router from "@/router";
 import CartCard from "@/components/cards/shop/CartCard.vue";
+import OrderProductCard from "@/components/cards/shop/OrderProductCard.vue";
 
 const route = useRoute();
 const authStore = useAuthStore();
@@ -20,11 +21,30 @@ const fetchOrder = createFetch({
     }
   }
 })
+const shipping = ref({});
+const billing = ref({});
+const payment = ref({});
+
 const {isFetching,data} = fetchOrder('http://localhost:3000/order/'+route.params.id).json()
-watch(data,(newData) => {loadedData.value = newData;})
+watch(data,(newData) => {
+  loadedData.value = newData;
+  shipping.value = (newData.shippingInfo);
+  billing.value = (newData.billingInfo);
+  payment.value = (newData.paymentMethod);
+  let newProducts = [];
+  for(let item of newData.lineItems){
+    console.log(item);
+    let newItem = newData.products.find( product => product.priceId.includes(item.price.id));
+    newItem.lineItem = item;
+    newProducts.push(newItem);
+  }
+  loadedData.value.products = newProducts;
+})
 const getDate = function (){
   return new Date(loadedData.value.createdOn).toLocaleString();
 }
+
+
 
 </script>
 
@@ -45,51 +65,58 @@ const getDate = function (){
       </div>
       <div class="divider"/>
       <div class="products">
-        <CartCard v-for="(product) in loadedData.products" :data="product"/>
+        <OrderProductCard v-for="(product) in loadedData.products" :data="product"/>
       </div>
 
-      <div class="line"/>
+<!--      <div class="line"/>-->
       <div class="headers5">
         <div class="title">SHIPPING ADDRESS</div>
-        <div class="addr"><div>First Name</div><div>Test</div></div>
-        <div class="addr"><div>Last Name</div><div>Lastley</div></div>
-        <div class="addr"><div>Address 1</div><div>123 First Street</div></div>
-        <div class="addr"><div>Address 2</div><div>Apt 11</div></div>
-        <div class="addr"><div>City</div><div>Trinidad</div></div>
-        <div class="addr"><div>State</div><div>CO</div></div>
-        <div class="addr"><div>Zip</div><div>10240</div></div>
-        <div class="addr"><div>Country</div><div>United States</div></div>
-        <div class="addr"><div>Email</div><div>test@gmail.com</div></div>
-        <div class="addr"><div>Phone</div><div></div></div>
+        <div class="addr"><div>Name</div><div>{{shipping.name}}</div></div>
+        <div class="addr"><div>Address 1</div><div>{{shipping.address.line1}}</div></div>
+        <div class="addr"><div>Address 2</div><div>{{shipping.address.line2}}</div></div>
+        <div class="addr"><div>City</div><div>{{shipping.address.city}}</div></div>
+        <div class="addr"><div>State</div><div>{{shipping.address.state}}</div></div>
+        <div class="addr"><div>Zip</div><div>{{shipping.address.postal_code}}</div></div>
+        <div class="addr"><div>Country</div><div>{{shipping.address.country}}</div></div>
+        <div class="addr"><div>Email</div><div>{{shipping.email}}</div></div>
+        <div class="addr"><div>Phone</div><div>{{shipping.phone}}</div></div>
       </div>
-      <div class="line"/>
+      <div class="divider"/>
       <div class="headers5">
         <div class="title">BILLING ADDRESS</div>
-        <div class="addr"><div>First Name</div><div>Test</div></div>
-        <div class="addr"><div>Last Name</div><div>Lastley</div></div>
-        <div class="addr"><div>Address 1</div><div>123 First Street</div></div>
-        <div class="addr"><div>Address 2</div><div>Apt 11</div></div>
-        <div class="addr"><div>City</div><div>Trinidad</div></div>
-        <div class="addr"><div>State</div><div>CO</div></div>
-        <div class="addr"><div>Zip</div><div>10240</div></div>
-        <div class="addr"><div>Country</div><div>United States</div></div>
-        <div class="addr"><div>Email</div><div>test@gmail.com</div></div>
-        <div class="addr"><div>Phone</div><div></div></div>
+        <div class="addr"><div>Name</div><div>{{billing.name}}</div></div>
+        <div class="addr"><div>Address 1</div><div>{{billing.address.line1}}</div></div>
+        <div class="addr"><div>Address 2</div><div>{{billing.address.line2}}</div></div>
+        <div class="addr"><div>City</div><div>{{billing.address.city}}</div></div>
+        <div class="addr"><div>State</div><div>{{billing.address.state}}</div></div>
+        <div class="addr"><div>Zip</div><div>{{billing.address.postal_code}}</div></div>
+        <div class="addr"><div>Country</div><div>{{billing.address.country}}</div></div>
+        <div class="addr"><div>Email</div><div>{{billing.email}}</div></div>
+        <div class="addr"><div>Phone</div><div>{{billing.phone}}</div></div>
       </div>
       <div class="divider"/>
       <div class="headers3">
-        <div class="finaltotal1">SHIPPING - FIRST CLASS MAIL - 3-5 BUSINESS DAYS</div>
-        <div class="finaltotal2">$6.00</div>
+        <div>SHIPPING - FIRST CLASS MAIL - 3-5 BUSINESS DAYS</div>
+        <div>${{parseFloat(loadedData.shippingCost/100).toFixed(2)}}</div>
       </div>
       <div class="headers3">
-        <div class="finaltotal1">TOTAL</div>
-        <div class="finaltotal2">${{loadedData.total/100}}.00</div>
+        <div>SUBTOTAL</div>
+        <div>${{parseFloat(loadedData.subtotal/100).toFixed(2)}}</div>
       </div>
       <div class="headers3">
-        <div class="finaltotal1">PAYMENT</div>
-        <div class="finaltotal2">XXXX-XXXX-XXXX-4242</div>
+        <div>TAX</div>
+        <div>${{parseFloat(loadedData.tax/100).toFixed(2)}}</div>
       </div>
-      <div class="button">VIEW RECEIPT</div>
+      <div class="headers3">
+        <div>TOTAL</div>
+        <div>${{parseFloat(loadedData.total/100).toFixed(2)}}</div>
+      </div>
+      <div class="headers3">
+        <div>PAYMENT</div>
+        <div v-if="payment.type ==='card'">XXXX-XXXX-XXXX-{{payment.card.last4}}</div>
+        <div v-else>{{payment.type.toUpperCase()}}</div>
+      </div>
+      <div class="button"><a :href="loadedData.receiptUrl">VIEW RECEIPT</a></div>
     </div>
 
     <InfoCard class="box click" title="VIEW ORDERS" @click="router.push('/orders')"/>
@@ -111,6 +138,11 @@ const getDate = function (){
   font-weight: 500;
   font-size: 1.2vw;
   flex: auto;
+}
+
+a{
+  color: #f1f1f1;
+  text-decoration: none;
 }
 
 .addr{
