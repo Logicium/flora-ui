@@ -47,15 +47,51 @@ const getDate = function (){
       <div class="products">
         <CartCard v-for="(product) in loadedData.products" :data="product"/>
       </div>
+
+      <div class="line"/>
+      <div class="headers5">
+        <div class="title">SHIPPING ADDRESS</div>
+        <div class="addr"><div>First Name</div><div>Test</div></div>
+        <div class="addr"><div>Last Name</div><div>Lastley</div></div>
+        <div class="addr"><div>Address 1</div><div>123 First Street</div></div>
+        <div class="addr"><div>Address 2</div><div>Apt 11</div></div>
+        <div class="addr"><div>City</div><div>Trinidad</div></div>
+        <div class="addr"><div>State</div><div>CO</div></div>
+        <div class="addr"><div>Zip</div><div>10240</div></div>
+        <div class="addr"><div>Country</div><div>United States</div></div>
+        <div class="addr"><div>Email</div><div>test@gmail.com</div></div>
+        <div class="addr"><div>Phone</div><div></div></div>
+      </div>
+      <div class="line"/>
+      <div class="headers5">
+        <div class="title">BILLING ADDRESS</div>
+        <div class="addr"><div>First Name</div><div>Test</div></div>
+        <div class="addr"><div>Last Name</div><div>Lastley</div></div>
+        <div class="addr"><div>Address 1</div><div>123 First Street</div></div>
+        <div class="addr"><div>Address 2</div><div>Apt 11</div></div>
+        <div class="addr"><div>City</div><div>Trinidad</div></div>
+        <div class="addr"><div>State</div><div>CO</div></div>
+        <div class="addr"><div>Zip</div><div>10240</div></div>
+        <div class="addr"><div>Country</div><div>United States</div></div>
+        <div class="addr"><div>Email</div><div>test@gmail.com</div></div>
+        <div class="addr"><div>Phone</div><div></div></div>
+      </div>
+      <div class="divider"/>
       <div class="headers3">
-        <div class="finaltotal1">SHIPPING</div>
-        <div class="finaltotal2">${{}}</div>
+        <div class="finaltotal1">SHIPPING - FIRST CLASS MAIL - 3-5 BUSINESS DAYS</div>
+        <div class="finaltotal2">$6.00</div>
       </div>
-      <div class="headers4">
+      <div class="headers3">
         <div class="finaltotal1">TOTAL</div>
-        <div class="finaltotal2">${{}}</div>
+        <div class="finaltotal2">${{loadedData.total/100}}.00</div>
       </div>
+      <div class="headers3">
+        <div class="finaltotal1">PAYMENT</div>
+        <div class="finaltotal2">XXXX-XXXX-XXXX-4242</div>
+      </div>
+      <div class="button">VIEW RECEIPT</div>
     </div>
+
     <InfoCard class="box click" title="VIEW ORDERS" @click="router.push('/orders')"/>
     <InfoCard class="box click" title="TRACK ORDER"/>
     <InfoCard class="box click" title="CANCEL ORDER"/>
@@ -77,12 +113,21 @@ const getDate = function (){
   flex: auto;
 }
 
+.addr{
+  display: flex;
+  justify-content: space-between;
+}
+
 .headers{
   display: flex;
   justify-content: space-between;
   margin-top: 0.8vw;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
+}
+
+.title{
+  margin-bottom: 0.8vw;
 }
 
 .headers2{
@@ -107,6 +152,22 @@ const getDate = function (){
   margin-top: 3vw;
 }
 
+.headers5{
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.8vw;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+}
+
+.shipping{
+  width: 50%;
+}
+
+.billing{
+  width: 50%;
+}
+
 .product{
   width: 70%
 }
@@ -123,6 +184,21 @@ const getDate = function (){
 .total{
   width: 10%;
   text-align: right;
+}
+
+.button{
+  background-color: black;
+  color: #f1f1f1;
+  text-align: center;
+  width: 13vw;
+  height: 3vw;
+  margin-top: 1.5vw;
+  margin-left: 1.5vw;
+  margin-bottom: 1.5vw;
+  cursor: pointer;
+  font-size: 1.2vw;
+  align-content: center;
+  font-weight: 500;
 }
 
 </style>

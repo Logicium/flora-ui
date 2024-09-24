@@ -49,7 +49,7 @@ init();
   background-color: #f1f1f1;
   font-weight: 500;
   font-size: 1.2vw;
-  padding-bottom: 3vw;
+  padding-bottom: 1.5vw;
 }
 
 .title{
