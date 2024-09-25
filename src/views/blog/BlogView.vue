@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
-import ImageCard from "@/components/cards/ImageCard.vue";
-import NumberCard from "@/components/cards/NumberCard.vue";
-import InfoCard from "@/components/cards/InfoCard.vue";
-import BannerCard from "@/components/cards/BannerCard2.vue";
-import Footer from "@/components/Footer.vue";
+import ImageCard from "../../components/cards/ImageCard.vue";
+import NumberCard from "../../components/cards/NumberCard.vue";
+import InfoCard from "../../components/cards/InfoCard.vue";
+import Footer from "../../components/Footer.vue";
+// @ts-ignore
 import router from "@/router";
 
 const route = function (id:string){

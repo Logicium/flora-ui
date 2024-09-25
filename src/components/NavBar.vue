@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
-import SearchIcon from "@/assets/icons/SearchIcon.vue";
-import ShopIcon from "@/assets/icons/ShopIcon.vue";
-import UserIcon from "@/assets/icons/UserIcon.vue";
+import SearchIcon from "../assets/icons/SearchIcon.vue";
+import ShopIcon from "../assets/icons/ShopIcon.vue";
+import UserIcon from "../assets/icons/UserIcon.vue";
 import router from "../router";
-import {useCartStore} from "@/stores/CartStore";
+import {useCartStore} from "../stores/CartStore";
 
 const cartStore = useCartStore();
 const route = function (route:string){

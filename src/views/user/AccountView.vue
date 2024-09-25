@@ -1,17 +1,17 @@
 <script setup lang="ts">
 
-import ImageCard from "@/components/cards/ImageCard.vue";
-import InfoCard from "@/components/cards/InfoCard.vue";
-import NumberCard from "@/components/cards/NumberCard.vue";
-import Footer from "@/components/Footer.vue";
-import AddressCard from "@/components/cards/user/AddressCard.vue";
+import ImageCard from "../../components/cards/ImageCard.vue";
+import InfoCard from "../../components/cards/InfoCard.vue";
+import NumberCard from "../../components/cards/NumberCard.vue";
+import Footer from "../../components/Footer.vue";
+import AddressCard from "../../components/cards/user/AddressCard.vue";
 import router from "@/router";
-import PrefsCard from "@/components/cards/user/PrefsCard.vue";
-import {useAccountStore} from "@/stores/AccountStore";
-import LoginView from "@/views/user/LoginView.vue";
+import PrefsCard from "../../components/cards/user/PrefsCard.vue";
+import {useAccountStore} from "../../stores/AccountStore";
+import LoginView from "../../views/user/LoginView.vue";
 import {ref, watch} from "vue";
 import {useFetch} from "@vueuse/core";
-import {useAuthStore} from "@/stores/AuthStore";
+import {useAuthStore} from "../../stores/AuthStore";
 
 const authStore = useAuthStore();
 const accountStore = useAccountStore();

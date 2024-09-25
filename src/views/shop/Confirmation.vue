@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
+// @ts-ignore
 import router from "@/router";
 import {ref} from "vue";
-import ImageCard from "@/components/cards/ImageCard.vue";
-import Footer from "@/components/Footer.vue";
+import ImageCard from "../../components/cards/ImageCard.vue";
+import Footer from "../../components/Footer.vue";
 
 initialize();
 const email = ref('');

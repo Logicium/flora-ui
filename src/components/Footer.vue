@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+// @ts-ignore
 import router from "@/router";
 
 const route = function (route:string){

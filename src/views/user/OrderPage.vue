@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import {useAuthStore} from "@/stores/AuthStore";
-import {reactive, ref, watch} from "vue";
+import {useAuthStore} from "../../stores/AuthStore";
+import {ref, watch} from "vue";
 import {createFetch, useFetch} from "@vueuse/core";
 import {useRoute} from "vue-router";
-import Footer from "@/components/Footer.vue";
-import InfoCard from "@/components/cards/InfoCard.vue";
+import Footer from "../../components/Footer.vue";
+import InfoCard from "../../components/cards/InfoCard.vue";
 import router from "@/router";
-import CartCard from "@/components/cards/shop/CartCard.vue";
-import OrderProductCard from "@/components/cards/shop/OrderProductCard.vue";
+import OrderProductCard from "../../components/cards/shop/OrderProductCard.vue";
 
 const route = useRoute();
 const authStore = useAuthStore();

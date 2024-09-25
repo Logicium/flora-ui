@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
-import {useProductStore} from "@/stores/ProductStore";
-import Footer from "@/components/Footer.vue";
+import {useProductStore} from "./stores/ProductStore";
 
 const productStore = useProductStore();
 productStore.fill();
@@ -13,10 +12,6 @@ productStore.fill();
 <div class="webapp">
   <NavBar/>
   <div class="row">
-<!--    <transition name="fade">-->
-<!--      <RouterView/>-->
-<!--    </transition>-->
-
     <RouterView v-slot="{ Component, route }" appear>
       <transition name="fade" mode="out-in">
         <div :key="route.name">
@@ -24,7 +19,6 @@ productStore.fill();
         </div>
       </transition>
     </RouterView>
-
   </div>
 </div>
 </template>

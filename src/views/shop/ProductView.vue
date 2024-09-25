@@ -1,15 +1,14 @@
 <script setup lang="ts">
 
-import {computed, ref, watch} from "vue";
-import InfoCard from "@/components/cards/InfoCard.vue";
-import ImageCard from "@/components/cards/ImageCard.vue";
-import NumberCard from "@/components/cards/NumberCard.vue";
-import Footer from "@/components/Footer.vue";
-import SocialCard from "@/components/cards/SocialCard.vue";
-import ProductCard from "@/components/cards/shop/ProductCard.vue";
+import {ref, watch} from "vue";
+import ImageCard from "../../components/cards/ImageCard.vue";
+import NumberCard from "../../components/cards/NumberCard.vue";
+import Footer from "../../components/Footer.vue";
+import SocialCard from "../../components/cards/SocialCard.vue";
+import ProductCard from "../../components/cards/shop/ProductCard.vue";
 import {useRoute} from "vue-router";
 import {useFetch} from "@vueuse/core";
-import SuggestedCard from "@/components/cards/shop/SuggestedCard.vue";
+import SuggestedCard from "../../components/cards/shop/SuggestedCard.vue";
 
 const route = useRoute()
 const loadedData = ref(null);

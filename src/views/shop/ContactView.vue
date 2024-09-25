@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import ImageCard from "@/components/cards/ImageCard.vue";
-import InfoCard from "@/components/cards/InfoCard.vue";
-import Footer from "@/components/Footer.vue";
-import ContactCard from "@/components/cards/ContactCard.vue";
-import BannerCard from "@/components/cards/BannerCard.vue";
-import SocialCard from "@/components/cards/SocialCard.vue";
+import InfoCard from "../../components/cards/InfoCard.vue";
+import Footer from "../../components/Footer.vue";
+import ContactCard from "../../components/cards/ContactCard.vue";
+import BannerCard from "../../components/cards/BannerCard.vue";
+import SocialCard from "../../components/cards/SocialCard.vue";
 </script>
 
 <template>

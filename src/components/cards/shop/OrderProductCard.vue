@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import {computed, ref} from "vue";
+// @ts-ignore
 import router from "@/router";
-import {useCartStore} from "@/stores/CartStore";
+
 
 const props = defineProps({
   data: { type: Object, default: ()=>{}},

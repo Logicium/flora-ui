@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
-import InfoCard from "@/components/cards/InfoCard.vue";
-import ImageCard from "@/components/cards/ImageCard.vue";
-import Footer from "@/components/Footer.vue";
-import NumberCard from "@/components/cards/NumberCard.vue";
-import BannerCard from "@/components/cards/BannerCard.vue";
-import data from "@/data/data";
-import ParagraphCard from "@/components/cards/shop/ParagraphCard.vue";
+import InfoCard from "../../components/cards/InfoCard.vue";
+import ImageCard from "../../components/cards/ImageCard.vue";
+import Footer from "../../components/Footer.vue";
+import NumberCard from "../../components/cards/NumberCard.vue";
+import BannerCard from "../../components/cards/BannerCard.vue";
+import data from "../../data/data";
+import ParagraphCard from "../../components/cards/shop/ParagraphCard.vue";
 
 </script>
 

@@ -1,11 +1,9 @@
 <script setup lang="ts">
+import Footer from "../components/Footer.vue";
+import {useProductStore} from "../stores/ProductStore";
+import ProductImageCard from "../components/cards/shop/ProductImageCard.vue";
 
-import Footer from "@/components/Footer.vue";
-
-import {useProductStore} from "@/stores/ProductStore";
 import { ref, watch } from 'vue';
-import ProductImageCard from "@/components/cards/shop/ProductImageCard.vue";
-
 const searchQuery = ref('');
 const productStore = useProductStore();
 const searchResults = ref([]);

@@ -1,31 +1,19 @@
 <script setup lang="ts">
 
 import NumberCard from "../components/cards/NumberCard.vue";
-import ImageCard from "../components/cards/ImageCard.vue";
-import InfoCard from "@/components/cards/InfoCard.vue";
-import Footer from "@/components/Footer.vue";
+import InfoCard from "../components/cards/InfoCard.vue";
+import Footer from "../components/Footer.vue";
 import Section1 from "../components/Section1.vue";
-import ContactCard from "@/components/cards/ContactCard.vue";
-import SocialCard from "@/components/cards/SocialCard.vue";
-import {useRoute} from "vue-router";
-import {ref, watch} from "vue";
-import {useFetch} from "@vueuse/core";
-import ProductImageCard from "@/components/cards/shop/ProductImageCard.vue";
-import {useProductStore} from "@/stores/ProductStore";
+import ContactCard from "../components/cards/ContactCard.vue";
+import SocialCard from "../components/cards/SocialCard.vue";
+import ProductImageCard from "../components/cards/shop/ProductImageCard.vue";
+import {useProductStore} from "../stores/ProductStore";
 
 const productStore = useProductStore();
-
-// const loadedData = ref(null);
-// const {isFetching, data} = useFetch('http://localhost:3000/product').json()
-// watch(data,(newData) => {loadedData.value = newData;})
-//watch(productStore.products,((newData) => {loadedData2.value = newData;} ))
-
 
 </script>
 
 <template>
-<!--  <div v-if="!loadedData">Loading...</div>-->
-<!--  <div v-else class="grid">-->
   <div v-if="!productStore.products">Loading... </div>
   <div v-else class="grid">
     <div class="banner"><Section1/></div>

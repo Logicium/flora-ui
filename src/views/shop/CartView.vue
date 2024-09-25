@@ -1,13 +1,14 @@
 <script setup lang="ts">
 
-import SocialCard from "@/components/cards/SocialCard.vue";
-import InfoCard from "@/components/cards/InfoCard.vue";
-import NumberCard from "@/components/cards/NumberCard.vue";
-import Footer from "@/components/Footer.vue";
-import CartCard from "@/components/cards/shop/CartCard.vue";
-import {useCartStore} from "@/stores/CartStore";
+import SocialCard from "../../components/cards/SocialCard.vue";
+import InfoCard from "../../components/cards/InfoCard.vue";
+import NumberCard from "../../components/cards/NumberCard.vue";
+import Footer from "../../components/Footer.vue";
+import CartCard from "../../components/cards/shop/CartCard.vue";
+import {useCartStore} from "../../stores/CartStore";
+// @ts-ignore
 import router from "@/router";
-import SuggestedCard from "@/components/cards/shop/SuggestedCard.vue";
+import SuggestedCard from "../../components/cards/shop/SuggestedCard.vue";
 
 const cartStore = useCartStore();
 

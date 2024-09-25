@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import {computed} from "vue";
+// @ts-ignore
 import router from "@/router";
-import {useProductStore} from "@/stores/ProductStore";
+import {useProductStore} from "../../../stores/ProductStore";
 
 const productStore = useProductStore();
 const index = Math.floor(Math.random() * productStore.products.length);

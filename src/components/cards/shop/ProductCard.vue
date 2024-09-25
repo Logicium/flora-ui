@@ -2,7 +2,7 @@
 import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import {useFetch} from "@vueuse/core";
-import {useCartStore} from "@/stores/CartStore";
+import {useCartStore} from "../../../stores/CartStore";
 
 const cartStore = useCartStore();
 const quantity = ref(1);

@@ -4,7 +4,7 @@ import ImageCard from "../../components/cards/ImageCard.vue";
 import InfoCard from "../../components/cards/InfoCard.vue";
 import NumberCard from "../../components/cards/NumberCard.vue";
 import BannerCard from "../../components/cards/BannerCard2.vue";
-import Footer from "@/components/Footer.vue";
+import Footer from "../../components/Footer.vue";
 
 const props = defineProps({
   image:  { type: String, default: '/src/assets/images/flower3.jpg'},

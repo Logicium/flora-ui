@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import {computed} from "vue";
+  // @ts-ignore
   import router from "@/router";
 
   const props = defineProps({

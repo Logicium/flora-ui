@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-import Footer from "@/components/Footer.vue";
-import { StripeCheckout } from '@vue-stripe/vue-stripe';
+import Footer from "../../components/Footer.vue";
 import {ref, onMounted, watch} from "vue";
 import {loadStripe} from '@stripe/stripe-js';
-import CheckoutCard from "@/components/cards/shop/CheckoutCard.vue";
-import {useCartStore} from "@/stores/CartStore";
+import CheckoutCard from "../../components/cards/shop/CheckoutCard.vue";
+import {useCartStore} from "../../stores/CartStore";
+// @ts-ignore
 import router from "@/router";
 
 const cartStore = useCartStore();

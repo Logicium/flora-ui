@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-import Footer from "@/components/Footer.vue";
-import SocialCard from "@/components/cards/SocialCard.vue";
-import NumberCard from "@/components/cards/NumberCard.vue";
-import {useAuthStore} from "@/stores/AuthStore";
-import ImageCard from "@/components/cards/ImageCard.vue";
-import SuggestedCard from "@/components/cards/shop/SuggestedCard.vue";
+import Footer from "../../components/Footer.vue";
+import SocialCard from "../../components/cards/SocialCard.vue";
+import NumberCard from "../../components/cards/NumberCard.vue";
+import {useAuthStore} from "../../stores/AuthStore";
+import ImageCard from "../../components/cards/ImageCard.vue";
+import SuggestedCard from "../../components/cards/shop/SuggestedCard.vue";
 const authStore = useAuthStore();
 authStore.token = null;
 </script>
