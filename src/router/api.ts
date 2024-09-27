@@ -3,7 +3,8 @@ import * as process from "process";
 
 dotenv.config();
 
-const baseUrl = process.env.VUE_APP_SERVICE || 'http://localhost:3000';
+// const baseUrl = process.env.VUE_APP_SERVICE || 'http://localhost:3000';
+const baseUrl = 'https://flora-6tzn.onrender.com';
 
 const api = {
     product:baseUrl+'/product',
