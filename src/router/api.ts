@@ -1,4 +1,7 @@
+import * as dotenv from "dotenv";
 import * as process from "process";
+
+dotenv.config();
 
 const baseUrl = process.env.VUE_APP_SERVICE || 'http://localhost:3000';
 
