@@ -1,7 +1,7 @@
-import * as dotenv from "dotenv";
-import * as process from "process";
+// import * as dotenv from "dotenv";
+// import * as process from "process";
 
-dotenv.config();
+// dotenv.config();
 
 // const baseUrl = process.env.VUE_APP_SERVICE || 'http://localhost:3000';
 const baseUrl = 'https://flora-6tzn.onrender.com';
