@@ -7,6 +7,7 @@ import Footer from "../../components/Footer.vue";
 import InfoCard from "../../components/cards/InfoCard.vue";
 import router from "@/router";
 import OrderProductCard from "../../components/cards/shop/OrderProductCard.vue";
+import api from "@/router/api";
 
 const route = useRoute();
 const authStore = useAuthStore();
@@ -24,7 +25,7 @@ const shipping = ref({});
 const billing = ref({});
 const payment = ref({});
 
-const {isFetching,data} = fetchOrder('http://localhost:3000/order/'+route.params.id).json()
+const {isFetching,data} = fetchOrder(api.order+'/'+route.params.id).json()
 watch(data,(newData) => {
   loadedData.value = newData;
   shipping.value = (newData.shippingInfo);

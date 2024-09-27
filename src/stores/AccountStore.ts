@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
 import {createFetch, useFetch, useLocalStorage, useStorage} from "@vueuse/core";
+import api from "@/router/api";
 export const useAccountStore = defineStore({
     id:"AccountStore",
     state:()=>{
@@ -17,7 +18,7 @@ export const useAccountStore = defineStore({
                     },
                 }
             })
-            const {isFetching,data} = await fetchUser('http://localhost:3000/auth/account').json();
+            const {isFetching,data} = await fetchUser(api.auth.account).json();
             return this.user = (await data);
             //console.log(this.user);
         }

@@ -4,6 +4,7 @@ import router from "@/router";
 import {ref} from "vue";
 import ImageCard from "../../components/cards/ImageCard.vue";
 import Footer from "../../components/Footer.vue";
+import api from "@/router/api";
 
 initialize();
 const email = ref('');
@@ -11,7 +12,7 @@ async function initialize() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const sessionId = urlParams.get('session_id');
-  const response = await fetch(`http://localhost:3000/order/session-status?session_id=${sessionId}`);
+  const response = await fetch(`${api.order.sessionStatus}?session_id=${sessionId}`);
   const session = await response.json();
   if (session.status === 'open') {
     router.push('/checkout');

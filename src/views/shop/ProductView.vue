@@ -9,10 +9,11 @@ import ProductCard from "../../components/cards/shop/ProductCard.vue";
 import {useRoute} from "vue-router";
 import {useFetch} from "@vueuse/core";
 import SuggestedCard from "../../components/cards/shop/SuggestedCard.vue";
+import api from "@/router/api";
 
 const route = useRoute()
 const loadedData = ref(null);
-const {isFetching, data} = useFetch('http://localhost:3000/product/'+route.params.id).json()
+const {isFetching, data} = useFetch(api.product+'/'+route.params.id).json()
 watch(data,(newData) => {loadedData.value = newData;})
 
 </script>

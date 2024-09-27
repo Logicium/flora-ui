@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import {ref} from "vue";
+import api from "@/router/api";
 
 const name = ref('');
 const email = ref('');
@@ -27,7 +28,7 @@ const onSubmit = function (e:any){
 </script>
 
 <template>
-  <form class="contactCard" id="contact"  @submit.prevent="onSubmit" action="http://localhost:3000/email/contact" method="post">
+  <form class="contactCard" id="contact"  @submit.prevent="onSubmit" :action="api.email.contact" method="post">
     <div class="line"/>
     <div class="title">CONTACT US</div>
     <input class="text" type="text" name="name" placeholder="your name" v-model="name"/>

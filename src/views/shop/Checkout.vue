@@ -7,6 +7,7 @@ import CheckoutCard from "../../components/cards/shop/CheckoutCard.vue";
 import {useCartStore} from "../../stores/CartStore";
 // @ts-ignore
 import router from "@/router";
+import api from "@/router/api";
 
 const cartStore = useCartStore();
 initialize();
@@ -15,7 +16,7 @@ initialize();
 async function initialize() {
   const stripe = await loadStripe("pk_test_51PyniU06xeklz4GneyDhf6oXawMJNXhtQWr56O6nMB6BQHMtln15gA55EFWlXdQw8hdSLmepkVpOVfTly52moTHV00kp0rL6wq");
   const fetchClientSecret = async () => {
-    const response = await fetch("http://localhost:3000/order/create-checkout-session", {
+    const response = await fetch(api.order.checkout, {
       method: "POST",
       body: JSON.stringify(cartStore.cart),
       headers: { "Content-Type": "application/json" }

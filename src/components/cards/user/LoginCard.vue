@@ -4,6 +4,7 @@ import {useAccountStore} from "@/stores/AccountStore";
 import router from "@/router";
 import {ref} from "vue";
 import {useAuthStore} from "@/stores/AuthStore";
+import api from "@/router/api";
 const accountStore = useAccountStore();
 const authStore = useAuthStore();
 const buttonText = ref('LOG IN');
@@ -32,7 +33,7 @@ const onSubmit = function (e:any){
 </script>
 
 <template>
-<form class="loginCard" id="login" @submit.prevent="onSubmit" action="http://localhost:3000/auth/login" method="post">
+<form class="loginCard" id="login" @submit.prevent="onSubmit" :action="api.auth.login" method="post">
   <div class="line"/>
   <div class="inputWrap">
     <input name="email" placeholder="email" type="email">

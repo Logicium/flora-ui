@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
 import {useFetch, useStorage} from "@vueuse/core";
+import api from "@/router/api";
 export const useProductStore = defineStore({
     id:"ProductStore",
     state:()=>{
@@ -9,7 +10,7 @@ export const useProductStore = defineStore({
     },
     actions:{
         async fill(){
-            const {isFetching,data} = await useFetch('http://localhost:3000/product').json();
+            const {isFetching,data} = await useFetch(api.product).json();
             this.products = (await data);
         }
     }
