@@ -9,7 +9,7 @@ import SocialCard from "../../components/cards/SocialCard.vue";
 <template>
   <div class="grid">
     <div class="imageWrap">
-      <BannerCard title="CONTACT" image="/src/assets/images/flower6.jpg"/>
+      <BannerCard title="CONTACT" image="/images/flower6.jpg"/>
     </div>
     <div class="infoWrap">
       <ContactCard/>
