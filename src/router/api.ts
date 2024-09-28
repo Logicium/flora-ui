@@ -3,23 +3,23 @@
 
 // dotenv.config();
 
-// const baseUrl = process.env.VUE_APP_SERVICE || 'http://localhost:3000';
+//const baseUrl = 'http://localhost:3000';
 const baseUrl = 'https://flora-6tzn.onrender.com';
 
 const api = {
     product:baseUrl+'/product',
     orders:baseUrl+'/order',
     order:{
-        sessionStatus:'/order/session-status',
-        checkout:'/order/create-checkout-session'
+        sessionStatus:baseUrl+'/order/session-status',
+        checkout:baseUrl+'/order/create-checkout-session'
     },
     auth:{
-        account:'/auth/account',
-        login: '/auth/login',
-        signup:'/auth/signup'
+        account:baseUrl+'/auth/account',
+        login:baseUrl+'/auth/login',
+        signup:baseUrl+'/auth/signup'
     },
     email:{
-        contact:'/email/contact'
+        contact:baseUrl+'/email/contact'
     }
 }
 
