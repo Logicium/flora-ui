@@ -10,7 +10,7 @@ import FaqCard from "../../components/cards/shop/FaqCard.vue";
 
   <div class="grid">
     <div class="imageWrap">
-      <BannerCard title="FAQS" image="/src/assets/images/flower11.jpg"/>
+      <BannerCard title="FAQS" image="/images/flower11.jpg"/>
     </div>
     <div class="faqs1 box"><FaqCard title="GENERAL QUESTIONS" :data="data.faq.generalQs"/></div>
     <div class="faqs2 box"><FaqCard title="ORDERS & RETURNS" :data="data.faq.orderQs"/></div>

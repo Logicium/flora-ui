@@ -13,7 +13,7 @@ authStore.token = null;
 <template>
 <div class="grid">
   <div class="logout">
-    <ImageCard title="YOU HAVE BEEN LOGGED OUT" image="/src/assets/images/flower12.jpg"/>
+    <ImageCard title="YOU HAVE BEEN LOGGED OUT" image="/images/flower12.jpg"/>
   </div>
   <SuggestedCard class="box"/>
   <NumberCard class="box" number="01" title="SUGGESTED"/>

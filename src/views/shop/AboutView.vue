@@ -16,7 +16,7 @@ import ParagraphCard from "../../components/cards/shop/ParagraphCard.vue";
       <ParagraphCard class="box" title="HANDMADE CARDS WITH A STORY" :info="data.about"/>
     </div>
     <div class="imageWrap">
-      <BannerCard title="ABOUT" image="/src/assets/images/flower5.jpg"/>
+      <BannerCard title="ABOUT" image="/images/flower5.jpg"/>
     </div>
     <NumberCard class="box" number="00" title="ZERO WASTE"/>
     <InfoCard class="box" title="LOCALLY GROWN FLOWERS PRESSED FOR ETERNITY"/>

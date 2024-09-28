@@ -25,7 +25,9 @@ const shipping = ref({});
 const billing = ref({});
 const payment = ref({});
 
-const {isFetching,data} = fetchOrder(api.order+'/'+route.params.id).json()
+console.log("Order page")
+
+const {isFetching,data} = fetchOrder(api.orders+'/'+route.params.id).json()
 watch(data,(newData) => {
   loadedData.value = newData;
   shipping.value = (newData.shippingInfo);

@@ -36,7 +36,7 @@ async function initialize() {
       </section>
       <div class="buttonWrap"><div class="button">VIEW ORDER</div></div>
     </div>
-    <ImageCard class="image1" title="THANK YOU FOR YOUR ORDER" image="/src/assets/images/flower12.jpg"/>
+    <ImageCard class="image1" title="THANK YOU FOR YOUR ORDER" image="/images/flower12.jpg"/>
     <Footer/>
   </div>
 </template>

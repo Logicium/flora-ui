@@ -7,7 +7,7 @@ import BannerCard from "../../components/cards/BannerCard2.vue";
 import Footer from "../../components/Footer.vue";
 
 const props = defineProps({
-  image:  { type: String, default: '/src/assets/images/flower3.jpg'},
+  image:  { type: String, default: '/images/flower3.jpg'},
   title:  { type: String, default: 'NEW PLANT DROP THIS MONTH' },
   body: { type: String, default: 'Article body' },
 })

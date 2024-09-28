@@ -8,10 +8,10 @@ import SignupCard from "../../components/cards/user/SignupCard.vue";
 
 <template>
   <div class="grid">
-    <div class="box login"><ImageCard title="LOG IN" image="/src/assets/images/flower10.jpg"/></div>
+    <div class="box login"><ImageCard title="LOG IN" image="/images/flower10.jpg"/></div>
     <div class="box loginForm"><LoginCard/></div>
     <div class="box signupForm"><SignupCard/></div>
-    <div class="box signup"><ImageCard title="SIGN UP" image="/src/assets/images/flower12.jpg"/></div>
+    <div class="box signup"><ImageCard title="SIGN UP" image="/images/flower12.jpg"/></div>
     <Footer/>
   </div>
 </template>

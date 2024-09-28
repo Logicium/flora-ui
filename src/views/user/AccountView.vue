@@ -36,7 +36,7 @@ const route = function (route:string){
 
 <template>
   <div v-if="authStore.token" class="grid">
-    <div class="box title"><ImageCard title="ACCOUNT" image="/src/assets/images/flower10.jpg"/></div>
+    <div class="box title"><ImageCard title="ACCOUNT" image="/images/flower10.jpg"/></div>
     <div class="box shipping"><AddressCard title="SHIPPING INFO"/></div>
     <div class="box billing"><AddressCard title="BILLING INFO"/></div>
     <InfoCard class="box click" @click="route('/orders')" title="YOUR ORDERS"/>

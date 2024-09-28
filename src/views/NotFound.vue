@@ -11,7 +11,7 @@ import ImageCard from "../components/cards/ImageCard.vue";
 <template>
   <div class="grid">
     <div class="logout">
-      <ImageCard title="PAGE NOT FOUND" image="/src/assets/images/flower12.jpg"/>
+      <ImageCard title="PAGE NOT FOUND" image="/images/flower12.jpg"/>
     </div>
     <InfoCard class="box"/>
     <NumberCard class="box" number="01" title="SUGGESTED"/>

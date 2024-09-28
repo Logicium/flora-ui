@@ -16,19 +16,19 @@ const route = function (id:string){
 <template>
   <div class="grid">
     <div class="image1" @click="route('01')">
-      <ImageCard image="/src/assets/images/flower3.jpg" title="NEW PLANT DROP THIS MONTH" price=""/>
+      <ImageCard image="/images/flower3.jpg" title="NEW PLANT DROP THIS MONTH" price=""/>
     </div>
     <NumberCard class="box" number="07" title="09/07/2024"/>
     <InfoCard class="box" title="TAGS" info="#newplants #shippingdates #announcement"/>
 
     <div class="image2">
-      <ImageCard image="/src/assets/images/flower4.jpg" title="HOW TO GROW DESERT ROSE" price=""/>
+      <ImageCard image="/images/flower4.jpg" title="HOW TO GROW DESERT ROSE" price=""/>
     </div>
     <NumberCard class="box" number="03" title="09/03/2024"/>
     <InfoCard class="box" title="TAGS" info="#plantcare #wateringguide #flowers"/>
 
     <div class="image3">
-      <ImageCard image="/src/assets/images/flower5.jpg" title="ALL ORDERS SHIPPING NOW" price=""/>
+      <ImageCard image="/images/flower5.jpg" title="ALL ORDERS SHIPPING NOW" price=""/>
     </div>
     <NumberCard class="box" number="21" title="08/21/2024"/>
     <InfoCard class="box" title="TAGS" info="#smallbusiness #shippingdates #announcement"/>
