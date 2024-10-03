@@ -5,7 +5,6 @@ import {ref, onMounted, watch} from "vue";
 import {loadStripe} from '@stripe/stripe-js';
 import CheckoutCard from "../../components/cards/shop/CheckoutCard.vue";
 import {useCartStore} from "../../stores/CartStore";
-// @ts-ignore
 import router from "@/router";
 import api from "@/router/api";
 

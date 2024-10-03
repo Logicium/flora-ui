@@ -24,10 +24,8 @@ const fetchOrder = createFetch({
 const shipping = ref({});
 const billing = ref({});
 const payment = ref({});
+const {isFetching,data} = fetchOrder(api.orders+'/'+route.params.id).json();
 
-console.log("Order page")
-
-const {isFetching,data} = fetchOrder(api.orders+'/'+route.params.id).json()
 watch(data,(newData) => {
   loadedData.value = newData;
   shipping.value = (newData.shippingInfo);
@@ -45,8 +43,6 @@ watch(data,(newData) => {
 const getDate = function (){
   return new Date(loadedData.value.createdOn).toLocaleString();
 }
-
-
 
 </script>
 
