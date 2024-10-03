@@ -3,8 +3,8 @@
 
 // dotenv.config();
 
-const baseUrl = 'http://localhost:3000';
-//const baseUrl = 'https://flora-6tzn.onrender.com';
+//const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://flora-6tzn.onrender.com';
 
 const api = {
     product:baseUrl+'/product',
